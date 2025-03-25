@@ -1,0 +1,27 @@
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-content">
+      <span><i class="pi pi-phone"></i> +91 87665 97343</span>
+      <span><i class="pi pi-envelope"></i> grwingflowers.com</span>
+      <span><i class="pi pi-map-marker"></i> Pune, Maharashtra, India</span>
+    </div>
+    <div class="top-bar-icons">
+      <i class="pi pi-facebook"></i>
+      <i class="pi pi-twitter"></i>
+      <i class="pi pi-instagram"></i>
+      <i class="pi pi-linkedin"></i>
+    </div>
+  </div>
+  
+  <!-- Navbar -->
+  <p-menubar [model]="items" class="custom-menubar">
+    <ng-template pTemplate="start">
+      <img src="../../../assets/Logo/temprory-logo.png" alt="Logo" class="logo">
+    </ng-template>
+    <ng-template pTemplate="end">
+      <button pButton label="Contact Us" class="contact-btn"></button>
+    </ng-template>
+  </p-menubar>
+
+  <!-- Router Outlet -->
+<router-outlet></router-outlet>
