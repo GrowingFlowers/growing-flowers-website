@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+
+<div class="flex justify-content-center my-5">
+  <p-card class="w-full md:w-8 lg:w-6 surface-card shadow-2 border-round p-4">
+    
+    <!-- Title -->
+    <h2 class="text-2xl font-bold text-color text-center mb-3">
+      Real Estate: Building Dreams
+    </h2>
+
+    <!-- Image Section -->
+    <div class="flex justify-content-center my-3">
+      <img src="https://static.vecteezy.com/system/resources/previews/036/725/233/non_2x/ai-generated-real-estate-advertisment-background-with-copy-space-free-photo.jpg" 
+           alt="Real Estate"
+           class="w-full md:w-10 border-round shadow-1 object-cover p-2" />
+    </div>
+
+    <!-- Short Description -->
+    <p class="text-base text-color text-justify mb-3">
+      Explore trusted listings, smart tools, and expert guidance for your next home, office, or land investment. We bring transparency and ease to your property journey.
+    </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-column md:flex-row justify-content-center gap-3 mt-4">
+            <!-- Home Button -->
+            <button pButton type="button" label="Go to Home" icon="pi pi-home"
+                    class="p-button-rounded p-button-primary font-bold px-4 py-2 text-base"
+                    [routerLink]="['/home']">
+            </button>
+      
+            <!-- Read More Button -->
+            <button pButton type="button" label="Read More" icon="pi pi-arrow-right"
+                    class="p-button-rounded p-button-success font-bold px-4 py-2 text-base"
+                    [routerLink]="['/domains/real-estate']">
+            </button>
+          </div>
+
+  </p-card>
+</div>
+
+<app-footer></app-footer>

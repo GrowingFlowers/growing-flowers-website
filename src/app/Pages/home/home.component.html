@@ -1,27 +1,145 @@
-<!-- Top Bar -->
-<div class="top-bar">
-    <div class="top-bar-content">
-      <span><i class="pi pi-phone"></i> +91 87665 97343</span>
-      <span><i class="pi pi-envelope"></i> grwingflowers.com</span>
-      <span><i class="pi pi-map-marker"></i> Pune, Maharashtra, India</span>
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
+<!-- Home Section -->
+<section id="home" class="hero-section">
+  <!-- Left Text -->
+  <div class="hero-text">
+    <h1 class="text-color">
+      <span class="highlight hover-g">G</span>locode<br />
+      Brightening the Future with Software
+    </h1>
+    <p class="text-color">We bring clarity, growth, and glow to your tech vision.</p>
+    <button [routerLink]="['/services']" class="btn-green">Explore Services</button>
+  </div>
+
+  <!-- Right Image -->
+  <div class="hero-image">
+    <img src="../../../assets/hero-image-2A.png" class="hover-g md:ml-8" alt="Tech Illustration" />
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about-us" class="about-section bg-gray-100 px-4 py-6 md:px-6 lg:px-10 xl:px-12 w-full">
+  <h2 class="text-4xl md:text-5xl font-bold text-center text-black-alpha-90 mb-6">About Us</h2>
+
+  <div class="flex flex-column md:flex-row md:align-items-center md:justify-content-between gap-6">
+    <!-- GIF Section -->
+    <div class="w-full md:w-6 flex justify-content-center">
+      <img src="../../../assets/about_1.gif" alt="About Us"
+        class="w-full md:w-10 h-auto max-h-28rem rounded-xl" />
     </div>
-    <div class="top-bar-icons">
-      <i class="pi pi-facebook"></i>
-      <i class="pi pi-twitter"></i>
-      <i class="pi pi-instagram"></i>
-      <i class="pi pi-linkedin"></i>
+
+    <!-- Text Section -->
+    <div class="w-full md:w-6 text-left">
+      <p class="text-base md:text-lg xl:text-xl text-black-alpha-90 line-height-3 mb-4">
+        GrowingFlowers Software Solutions, founded in 2024 by <span class="font-bold">Rupesh Shirude</span>, is a
+        product-based tech company focused on building innovative and reliable software solutions.
+      </p>
+      <p class="text-base md:text-lg xl:text-xl text-black-alpha-90 line-height-3 mb-4">
+        Our mission is to deliver products that combine thoughtful design with seamless performance across domains like
+        social networking, property management, and digital transformation.
+      </p>
+      <p class="text-base md:text-lg xl:text-xl text-black-alpha-90 line-height-3 mb-5">
+        Backed by a passionate team, we’re committed to crafting digital experiences that make everyday life smarter and
+        more connected.
+      </p>
+
+      <div class="flex justify-content-center md:justify-content-start">
+        <button [routerLink]="['/company/about-us']" pButton
+          class="px-4 md:px-5 py-3 bg-green-500 border-none text-white font-bold border-round-3xl text-sm md:text-lg cursor-pointer hover:bg-green-700 transition-all">
+          Read More
+        </button>
+      </div>
+      
     </div>
   </div>
-  
-  <!-- Navbar -->
-  <p-menubar [model]="items" class="custom-menubar">
-    <ng-template pTemplate="start">
-      <img src="../../../assets/Logo/temprory-logo.png" alt="Logo" class="logo">
-    </ng-template>
-    <ng-template pTemplate="end">
-      <button pButton label="Contact Us" class="contact-btn"></button>
-    </ng-template>
-  </p-menubar>
+</section>
 
-  <!-- Router Outlet -->
+<!-- Our Products -->
+<section class="our-products surface-0 mb-5 py-4 px-4 md:px-6 lg:px-10 xl:px-12">
+  <h2 class="text-4xl md:text-5xl font-bold text-center text-black-alpha-90 mb-2">
+    Our Products
+  </h2>
+
+  <p-carousel [value]="products" [numVisible]="2" [numScroll]="1" [circular]="false" [autoplayInterval]="5000"
+    [responsiveOptions]="responsiveOptions" [showNavigators]="false" [showIndicators]="true"
+    class="custom-carousel w-full">
+    <ng-template pTemplate="item" let-product>
+      <div class="p-3 w-full">
+        <div class="shadow-4 border-round-3xl bg-white p-4 relative h-full product-card">
+          <!-- Badge -->
+          <div class="badge-container">
+            <span class="product-badge" [ngClass]="{
+                'new-badge': product.badge === 'New',
+                'coming-soon-badge': product.badge === 'Coming Soon'
+              }">
+              {{ product.badge }}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-2xl md:text-3xl font-bold text-green-600 text-center mb-4 mt-2">
+            {{ product.title }}
+          </h3>
+
+          <!-- Product Container -->
+          <div class="flex flex-column md:flex-row align-items-center justify-content-between gap-4">
+            <!-- Image Section -->
+            <div class="w-full md:w-5 flex justify-content-center align-items-center relative image-container">
+              <div class="w-full flex align-items-center justify-content-center" style="height: 220px;">
+                <img [src]="product.image" [alt]="product.title" class="object-contain border-round-xl"
+                  style="max-height: 200px; max-width: 100%;" />
+              </div>
+            </div>
+
+            <!-- Text and Button -->
+            <div class="w-full md:w-7 flex flex-column justify-content-between gap-3">
+              <p class="text-base md:text-lg text-black-alpha-90 line-height-3 text-justify">
+                {{ product.description }}
+              </p>
+              <button [routerLink]="[product.route]"
+                class="self-start px-4 md:px-5 py-3 bg-green-500 border-none text-white font-bold border-round-3xl text-sm md:text-lg cursor-pointer hover:bg-green-700 transition-all">
+                Know More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>
+
+
+<!-- Careers & Contact Us Section -->
+<section id="careers-contact" class="px-5 py-5 bg-green-100">
+  <div class="grid gap-5 justify-content-center">
+
+    <!-- Careers Card -->
+    <div id="careers"
+      class="col-12 md:col-5 bg-white text-4xl md:text-5xl font-bold text-center text-black-alpha-90 mb-2 p-8 border-round shadow-2 flex flex-column align-items-center justify-content-center">
+      <h2 class="text-5xl font-bold mb-3">Careers</h2>
+      <p class="mb-4 text-xl">Gain a heritage. Leave a legacy.</p>
+      <button pButton label="JOIN US" [routerLink]="['/careers']"
+        class="bg-green-500 hover:bg-green-700 text-white border-none px-4 py-3 border-round transition-colors w-full sm:w-auto"></button>
+    </div>
+
+    <div class="flex align-items-center justify-content-center vertical-divider my-0 md:my-5 surface-900"></div>
+
+    <!-- Contact Us Card -->
+    <div id="contact-us"
+      class="col-12 md:col-5 bg-white text-4xl md:text-5xl font-bold text-center text-black-alpha-90 mb-2 p-8 border-round shadow-2 flex flex-column align-items-center justify-content-center">
+      <h2 class="text-5xl font-bold mb-3">Contact Us</h2>
+      <p class="mb-4 text-xl">What can we help you achieve?</p>
+      <button pButton label="SPEAK WITH US" [routerLink]="['/contact-us']"
+        class="bg-green-500 hover:bg-green-700 text-white border-none px-4 py-3 border-round transition-colors w-full sm:w-auto"></button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<app-footer></app-footer>
+
+<!-- Router Outlet -->
 <router-outlet></router-outlet>

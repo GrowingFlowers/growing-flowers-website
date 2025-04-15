@@ -1,0 +1,21 @@
+/* Highlight invalid fields */
+.p-invalid {
+    border: 2px solid #f44336 !important; /* Red border */
+    animation: shake 0.3s ease-in-out 0s 2; /* Shake animation */
+  }
+  
+  /* Error label */
+  .p-error {
+    color: #f44336 !important;
+    font-weight: 500;
+  }
+  
+  /* Shake animation */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); -webkit-transform: translateX(4px); -moz-transform: translateX(4px); -ms-transform: translateX(4px); -o-transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+  }
+  

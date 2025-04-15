@@ -1,0 +1,20 @@
+/* Rose Gradient Background */
+.bg-gradient-rose {
+  background: linear-gradient(to bottom right, #ffffff, #fff5f7, #ffe4e6);
+}
+
+/* Card Styles */
+.product-card-detail {
+  border: 1px solid var(--surface-border);
+  background-color: var(--surface-0);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover Effect with Smooth Shadow */
+.hoverable-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hoverable-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.15); /* soft rose shadow */
+}

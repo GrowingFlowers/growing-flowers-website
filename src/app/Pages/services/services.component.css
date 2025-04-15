@@ -1,0 +1,133 @@
+.card-container {
+    perspective: 1000px;
+    height: 22rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    border-radius: 1.5rem;
+}
+
+/* Flip on hover */
+.card-container.hover-flip:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Soft Mint */
+.gradient-white-0 {
+  background: linear-gradient(135deg, #ffffff, #a8e6cf);
+}
+
+/* Fresh Leaf */
+.gradient-white-1 {
+  background: linear-gradient(135deg, #ffffff, #7ed957);
+}
+
+/* Light Emerald */
+.gradient-white-2 {
+  background: linear-gradient(135deg, #ffffff, #00b894);
+}
+
+/* Organic Green */
+.gradient-white-3 {
+  background: linear-gradient(135deg, #ffffff, #2ecc71);
+}
+
+/* Clean Forest */
+.gradient-white-4 {
+  background: linear-gradient(135deg, #ffffff, #1abc9c);
+}
+
+/* Modern Lime */
+.gradient-white-5 {
+  background: linear-gradient(135deg, #ffffff, #6ee7b7);
+}
+
+/* Green Mint Mist */
+.gradient-white-6 {
+  background: linear-gradient(135deg, #ffffff, #9ae6b4);
+}
+
+/* Lush Meadow */
+.gradient-white-7 {
+  background: linear-gradient(135deg, #ffffff, #38a169);
+}
+
+
+/* Black + Green Gradient Themes */
+/*
+.gradient-0 {
+    background: linear-gradient(135deg, #006400, #00cc66);
+}
+
+.gradient-1 {
+    background: linear-gradient(135deg, #004d40, #26a69a);
+}
+
+.gradient-2 {
+    background: linear-gradient(135deg, #264d00, #80e27e);
+}
+
+.gradient-3 {
+    background: linear-gradient(135deg, #14532d, #22c55e);
+}
+
+.gradient-4 {
+    background: linear-gradient(135deg, #065f46, #34d399);
+}
+
+.gradient-5 {
+    background: linear-gradient(135deg, #064e3b, #10b981);
+}
+*/
+
+/* Yellow + Green Gradient Themes */
+/*
+.gradient-yellowgreen-0 {
+    background: linear-gradient(135deg, #fffde7, #dce775);
+  }
+  
+  .gradient-yellowgreen-1 {
+    background: linear-gradient(135deg, #ffff8d, #aed581);
+  }
+  
+  .gradient-yellowgreen-2 {
+    background: linear-gradient(135deg, #fff9c4, #9ccc65);
+  }
+  
+  .gradient-yellowgreen-3 {
+    background: linear-gradient(135deg, #fffde7, #7cb342);
+  }
+  
+  .gradient-yellowgreen-4 {
+    background: linear-gradient(135deg, #fffde7, #689f38);
+  }
+  
+  .gradient-yellowgreen-5 {
+    background: linear-gradient(135deg, #f0f4c3, #558b2f);
+  }
+*/

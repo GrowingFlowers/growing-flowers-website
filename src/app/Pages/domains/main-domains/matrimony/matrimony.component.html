@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+
+<div class="flex justify-content-center my-5">
+  <p-card class="w-full md:w-8 lg:w-6 surface-card shadow-2 border-round p-4">
+    
+    <!-- Title -->
+    <h2 class="text-3xl font-bold text-color text-center">Matrimony</h2>
+
+    <!-- Image Section -->
+    <div class="flex justify-content-center my-3">
+      <img src="https://cdn.pixabay.com/photo/2021/04/05/19/55/wedding-6154519_1280.jpg" alt="Matrimony" 
+           class="w-full md:w-10 border-round shadow-1 object-contain p-2" />
+    </div>
+
+    <!-- Description -->
+    <p class="text-lg text-color text-justify">
+      Discover a wide range of verified and trustworthy bride & groom profiles tailored for every community. 
+      With an easy-to-use interface and advanced filters, our Matrimony platform helps you connect with your ideal life partner 
+      effortlessly. Start your journey today with thousands of verified matches. Whether you're looking for someone who shares 
+      your values, lifestyle, or cultural background, our smart matchmaking system ensures meaningful connections that go beyond just profiles. 
+      Join a growing community of happy couples who found love and companionship through our trusted platform.
+    </p>
+    
+    
+  </p-card>
+</div>
+<!-- Go to Home Button -->
+<div class="flex justify-content-center my-4">
+  <button pButton type="button" label="Go to Home" icon="pi pi-home"
+          class="p-button-rounded p-button-primary font-bold px-4 py-2 text-lg"
+          [routerLink]="['/home']">
+  </button>
+</div>
+<app-footer></app-footer>

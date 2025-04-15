@@ -1,0 +1,106 @@
+<app-navbar></app-navbar>
+
+<section
+  class="flex justify-content-center align-items-center min-h-screen bg-gradient-to-b from-green-50 to-green-100 py-4 px-3">
+  <div class="grid w-full md:h-full">
+
+    <!-- Map Column -->
+    <div class="col-12 md:col-6 mb-4 md:mb-0 px-3 flex">
+      <div class="border-round overflow-hidden shadow-2 w-full h-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d305.793556292244!2d73.72967250514435!3d18.65578367101452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbf0af04aa37%3A0x20c831b86c4a4b5f!2sGrowingflowers%20Software%20Solutions%20LLP!5e0!3m2!1sen!2sin!4v1744293369522!5m2!1sen!2sin"
+          class="w-full h-full border-none"
+          allowfullscreen
+          loading="eager"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  
+    <!-- Form Column -->
+    <div class="col-12 md:col-6 px-3 flex">
+      <div class="p-3 surface-0 border-round shadow-3 w-full h-full">
+  
+        <!-- Heading -->
+        <div class="text-center mb-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-color mb-2">Get in touch</h2>
+          <p class="text-green-700 text-base md:text-xl mb-6">
+            Start your journey on expanding your company and making your business better, more agile and profitable.
+          </p>
+        </div>
+  
+        <!-- Contact Form -->
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="formgrid grid">
+  
+            <!-- Name -->
+            <div class="field col-12 md:col-6">
+              <label for="name" class="block font-semibold mb-1">Name</label>
+              <input id="name" type="text" formControlName="name"
+                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                [ngClass]="{'p-invalid': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}" />
+              <small *ngIf="contactForm.get('name')?.hasError('required') && contactForm.get('name')?.touched"
+                class="p-error">Name is required.</small>
+              <small *ngIf="contactForm.get('name')?.hasError('minlength') && contactForm.get('name')?.touched"
+                class="p-error">Name must be at least 3 characters.</small>
+            </div>
+  
+            <!-- Email -->
+            <div class="field col-12 md:col-6">
+              <label for="email" class="block font-semibold mb-1">Email</label>
+              <input id="email" type="text" formControlName="email"
+                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                [ngClass]="{'p-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}" />
+              <small *ngIf="contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched"
+                class="p-error">Email is required.</small>
+              <small *ngIf="contactForm.get('email')?.hasError('email') && contactForm.get('email')?.touched"
+                class="p-error">Enter a valid email.</small>
+            </div>
+  
+            <!-- Phone -->
+            <div class="field col-12 md:col-6">
+              <label for="phone" class="block font-semibold mb-1">Phone</label>
+              <input id="phone" type="text" formControlName="phone"
+                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                [ngClass]="{'p-invalid': contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched}" />
+              <small *ngIf="contactForm.get('phone')?.hasError('required') && contactForm.get('phone')?.touched"
+                class="p-error">Contact number is required.</small>
+            </div>
+  
+            <!-- Subject -->
+            <div class="field col-12 md:col-6">
+              <label for="subject" class="block font-semibold mb-1">Subject</label>
+              <input id="subject" type="text" formControlName="subject"
+                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                [ngClass]="{'p-invalid': contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched}" />
+              <small *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched"
+                class="p-error">Subject is required.</small>
+            </div>
+  
+            <!-- Message -->
+            <div class="field col-12">
+              <label for="message" class="block font-semibold mb-1">Message</label>
+              <textarea pInputTextarea id="message" formControlName="message" rows="4"
+                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                autoResize
+                [ngClass]="{'p-invalid': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}">
+              </textarea>
+              <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+                class="p-error">Message is required.</small>
+            </div>
+          </div>
+  
+          <!-- Send Button -->
+          <div class="col-12 flex justify-content-center mt-3">
+            <button pButton type="submit" icon="pi pi-send" label="Send"
+              class="p-button-rounded p-button-success px-4 py-2" [disabled]="contactForm.invalid"></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <p-toast></p-toast>
+</section>
+
+<app-footer></app-footer>

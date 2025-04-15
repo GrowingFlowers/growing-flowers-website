@@ -1,0 +1,19 @@
+.custom-card {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    background-color: var(--surface-card);
+    border: 1px solid var(--surface-border);
+}
+
+.custom-card:hover {
+    box-shadow: var(--shadow-5);
+    border-color: var(--primary-color);
+}
+
+/* career.component.css */
+.p-error {
+    color: #e24c4b;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    display: block;
+  }
+  

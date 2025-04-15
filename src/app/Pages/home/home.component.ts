@@ -1,39 +1,80 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { MenubarModule } from 'primeng/menubar';
-import { SidebarModule } from 'primeng/sidebar';
+import { CarouselModule } from 'primeng/carousel';
+import { GalleriaModule } from 'primeng/galleria';
+import { NavbarComponent } from "../navbar/navbar.component";
+import { FooterComponent } from "../footer/footer.component";
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule,MenubarModule,SidebarModule,CommonModule, RouterModule],
+  imports: [ButtonModule, CarouselModule, RouterModule, GalleriaModule, NavbarComponent, FooterComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  // Fixes issue where the carousel splits into two rows and displays different images when autoplay is enabled
+  host: { ngSkipHydration: 'true' },
 })
 export class HomeComponent {
 
-  sidebarVisible = false;
-  
-  // items = [
-  //   { label: 'Home', icon: 'pi pi-home' },
-  //   { label: 'About', icon: 'pi pi-info-circle' },
-  //   { 
-  //     label: 'Services', icon: 'pi pi-cog',
-  //     items: [
-  //       { label: 'Web Development', icon: 'pi pi-code' },
-  //       { label: 'Mobile Apps', icon: 'pi pi-mobile' }
-  //     ]
-  //   },
-  //   { label: 'Contact', icon: 'pi pi-envelope' }
-  // ];
-
-  items = [
-    { label: 'Home', icon: 'pi pi-home' },
-    { label: 'Company', icon: 'pi pi-building' },
-    { label: 'Our Products', icon: 'pi pi-box' },
-    { label: 'Services', icon: 'pi pi-cog' },
-    { label: 'Blogs', icon: 'pi pi-book' },
-    { label: 'Careers', icon: 'pi pi-briefcase' }
+  products = [
+    {
+      title: 'Vadhu Var Suchika',
+      image: '../../../../assets/products/vadhu-var-suchika.jpg',
+      description: `Find your perfect match with verified profiles and smart matchmaking. 
+      Bridging tradition and trust for a secure matrimony experience.`,
+      route: '/products/vadhu-var-suchika',
+      badge: 'New',
+    },
+    {
+      title: 'My Dream Property',
+      image: '../../../../assets/products/mdp.png',
+      description: `Browse trusted real estate listings across India with expert advice and legal support. 
+      Your property journey starts here.`,
+      route: '/products/my-dream-property',
+      badge: 'Coming Soon',
+    },
+    {
+      title: 'Be VibeStar',
+      image: '../../../../assets/products/be-vibestar.jpg',
+      description: `Create, connect, and vibe with real followers. 
+      A bold social platform with AI filters and smart privacy.`,
+      route: '/products/be-vibestar',
+      badge: 'Coming Soon',
+    },
+    {
+      title: 'My Dream Property',
+      image: '../../../../assets/products/mdp.png',
+      description: `Find top residential and commercial properties backed by reliable insights and support.
+      Designed for buyers and investors alike.`,
+      route: '/products/my-dream-property',
+      badge: 'Coming Soon',
+    },
   ];
+  
+  
+  responsiveOptions = [
+    {
+      breakpoint: '1400px',
+      numVisible: 2,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '1024px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '560px',
+      numVisible: 1,
+      numScroll: 1,
+    }
+  ];
+  
+   
 }

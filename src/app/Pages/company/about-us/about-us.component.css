@@ -1,0 +1,66 @@
+/* Full usage of card space */
+/* Avatar Image */
+::ng-deep .team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Text Styling */
+::ng-deep .team-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+::ng-deep .team-card p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+/* Button Styling */
+::ng-deep .view-profile-btn {
+  margin-top: auto;
+  background-color: #63e6be !important;
+  border: none;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+::ng-deep .view-profile-btn:hover {
+  background-color: #4bc49c !important;
+}
+
+/* Carousel spacing adjustments */
+::ng-deep .p-carousel .p-carousel-content {
+  padding: 0 0.5rem !important;
+}
+
+::ng-deep .p-carousel-item {
+  padding: 0 0.5rem !important;
+}
+
+::ng-deep .p-carousel-container {
+  justify-content: center !important;
+}
+
+::ng-deep .p-carousel-prev,
+::ng-deep .p-carousel-next {
+  display: none !important;
+}
+
+
+/* Smooth and slow transition between carousel items */
+::ng-deep .p-carousel-items-content {
+  /* transition: transform 1s ease-in-out !important; */
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1) !important;
+
+}

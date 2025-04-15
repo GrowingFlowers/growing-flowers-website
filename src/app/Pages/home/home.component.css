@@ -1,33 +1,191 @@
-.top-bar {
-    background: #a3b98d;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 20px;
-    color: white;
+
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+}
+
+.hero-text {
+  max-width: 600px;
+  flex: 1 1 50%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0c1b3b;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: #5CE65C;
+}
+
+.hover-g {
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.hover-g:hover {
+  transform: scale(1.2) rotate(-5deg);
+  color: #5CE65C;
+  cursor: pointer;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.btn-green {
+  background-color: #5CE65C;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 30px;
+  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+.btn-green:hover {
+  background-color: #5CE65C;
+  transform: scale(1.05);
+}
+
+.hero-image {
+  flex: 1 1 40%;
+  /* margin-top: 20px; */
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 60px 5%;
+    text-align: center;
   }
-  
-  .top-bar-content span {
-    margin-right: 15px;
-    font-size: 14px;
+
+  .hero-text h1 {
+    font-size: 2.4rem;
   }
-  
-  .top-bar-icons i {
-    margin-left: 10px;
-    cursor: pointer;
+
+  .btn-green {
+    width: 100%;
   }
-  
-  .custom-menubar {
-    background: white;
-    /* padding: 10px; */
-    border-bottom: 1px solid #ddd;
+
+  .hero-image {
+    margin-top: 40px;
   }
-  
-  .logo {
-    height: 40px;
+}
+
+/* Our Products */
+/* Ensure image container is relative for badge placement
+.image-container {
+  position: relative;
+}
+
+.badge-container {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+}
+
+.product-badge {
+  padding: 0.3rem 0.75rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.new-badge {
+  background-color: #10b981; 
+}
+
+.coming-soon-badge {
+  background-color: #f59e0b; 
+} */
+
+/* Prevent badge from overlapping title on small screens */
+/* @media (max-width: 768px) {
+  .badge-container {
+    top: 0.3rem;
+    left: 0.3rem;
+    transform: scale(0.85);
   }
-  
-  .contact-btn {
-    background: #e67e22;
-    color: white;
-    border-radius: 5px;
+} */
+
+
+.image-container {
+  position: relative;
+}
+
+.badge-container {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+}
+
+.product-badge {
+  padding: 0.3rem 0.75rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.new-badge {
+  background-color: #10b981; /* Tailwind green-500 */
+}
+
+.coming-soon-badge {
+  background-color: #f59e0b; /* Tailwind amber-500 */
+}
+
+@media (max-width: 768px) {
+  .badge-container {
+    top: 0.3rem;
+    left: 0.3rem;
+    transform: scale(0.85);
   }
+}
+
+/* Smooth scroll animation */
+::ng-deep .p-carousel-items-content {
+  scroll-behavior: smooth;
+  transition: transform 1s ease-in-out !important;
+}
+
+/* Careers and Contact Section */
+.vertical-divider {
+  width: 2px;
+  background-color: #666;
+  height: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .vertical-divider {
+    width: 80%;
+    height: 2px;
+    margin: 20px auto;
+  }
+}

@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<!-- FAQ Section -->
+<div class="mx-3 md:mx-6 lg:mx-10 xl:mx-20 py-6">
+  <div class="bg-white shadow-4 border-round-2xl p-3 md:p-5 lg:p-6">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="text-2xl md:text-3xl font-bold text-green-900 mb-2">Frequently Asked Questions</h2>
+      <p class="text-gray-600 text-sm md:text-base">
+        Find answers to the most common queries about our services, processes, and support.
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <p-accordion [(activeIndex)]="activeIndexes" [multiple]="true" class="w-full" expandIcon="none" collapseIcon="none">
+      <p-accordionTab *ngFor="let faq of faqs; let i = index">
+        <ng-template pTemplate="header">
+          <div class="flex justify-between items-center w-full 
+                      text-base md:text-lg lg:text-xl font-semibold cursor-pointer">
+            <span class="text-left w-full">
+              {{ faq.question }}
+            </span>
+            <i class="pi transition-transform duration-300" [ngClass]="{
+                  'pi-chevron-down': !activeIndexes.includes(i),
+                  'pi-chevron-up': activeIndexes.includes(i)
+                }" style="color: #3cca20;"></i>
+          </div>
+        </ng-template>
+        <p class="text-gray-700 px-1 md:px-2 py-2 
+                    text-sm md:text-base lg:text-lg leading-relaxed">
+          {{ faq.answer }}
+        </p>
+      </p-accordionTab>
+    </p-accordion>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

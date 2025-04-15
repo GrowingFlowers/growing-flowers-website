@@ -1,0 +1,36 @@
+/* Active green text and underline */
+.active-link {
+  color: #06a70e !important;
+  font-weight: bold;
+  border-bottom: 2px solid #06a70e !important;
+}
+
+.nav-link {
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #FFC436;
+}
+
+.text-black {
+  color: #000 !important;
+}
+
+/* Sticky Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #f9fafb !important;
+  color: #000 !important;
+}
+
+/* Ensure light theme */
+::ng-deep .custom-sidebar,
+::ng-deep .custom-sidebar *,
+::ng-deep .custom-navbar,
+::ng-deep .custom-navbar * {
+  background-color: #f9fafb !important;
+  color: #000 !important;
+}

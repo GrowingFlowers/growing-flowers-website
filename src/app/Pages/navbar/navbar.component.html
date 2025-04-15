@@ -1,1 +1,86 @@
-<p>navbar works!</p>
+<nav class="w-full z-5 shadow-1" style="position: sticky; top: 0;">
+  <div class="navbar flex align-items-center justify-content-between px-4 py-2 bg-gray-50">
+ 
+    <!-- Logo -->
+    <a routerLink="/home">
+      <img src="../../../assets/Logo/logo_100.png" alt="Logo" class="h-5rem w-auto object-contain" />
+    </a>
+ 
+    <!-- Mobile Toggle Button -->
+    <button pButton icon="pi pi-bars" class="lg:hidden m-4 ml-auto" (click)="sidebarVisible = true"></button>
+ 
+    <!-- Mobile Sidebar -->
+    <p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="10000" position="right" [style]="{ width: '250px' }"
+      styleClass="custom-sidebar">
+      <ul class="list-none p-0 m-0">
+        <li *ngFor="let item of items" class="mb-3 text-xl font-bold mx-3">
+          <ng-container *ngIf="item.subItems; else simpleMobileLink">
+            <div class="flex justify-content-between align-items-center cursor-pointer"
+              (click)="toggleDropdown(item.label, $event)">
+              <span>{{ item.label }}</span>
+              <i class="pi" [ngClass]="dropdownStates[item.label] ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
+            </div>
+            <ul *ngIf="dropdownStates[item.label]" class="pl-3 mt-2">
+              <li *ngFor="let sub of item.subItems" class="list-none mb-2 text-lg">
+                <a [routerLink]="sub.route" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+                  class="no-underline hover:text-yellow-400" (click)="sidebarVisible = false">
+                  {{ sub.label }}
+                </a>
+              </li>
+            </ul>
+          </ng-container>
+          <ng-template #simpleMobileLink>
+            <a *ngIf="item.route; else scrollLink" [routerLink]="item.route" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }" class="no-underline hover:text-yellow-400"
+              (click)="sidebarVisible = false">
+              {{ item.label }}
+            </a>
+            <ng-template #scrollLink>
+              <a class="no-underline hover:text-yellow-400 cursor-pointer"
+                (click)="scrollToSection(item.section!); sidebarVisible = false">
+                {{ item.label }}
+              </a>
+            </ng-template>
+          </ng-template>
+        </li>
+      </ul>
+    </p-sidebar>
+ 
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex align-items-center custom-navbar">
+      <ul class="flex list-none m-0">
+        <li *ngFor="let item of items" class="relative mx-5 font-bold text-2xl group">
+          <ng-container *ngIf="item.subItems; else simpleDesktopLink">
+            <div class="flex align-items-center cursor-pointer relative" (mouseenter)="openDropdown(item.label)"
+              (mouseleave)="closeDropdown(item.label)">
+              <span>{{ item.label }}</span>
+              <i class="pi pi-chevron-down ml-2"></i>
+              <ul *ngIf="dropdownStates[item.label]"
+                class="absolute top-100 left-0 surface-overlay shadow-2 border-round p-2 w-15rem z-5"
+                (mouseenter)="openDropdown(item.label)" (mouseleave)="closeDropdown(item.label)">
+                <li *ngFor="let sub of item.subItems" class="list-none py-2 px-3 text-lg">
+                  <a [routerLink]="sub.route" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+                    class="no-underline hover:text-yellow-500">
+                    {{ sub.label }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </ng-container>
+          <ng-template #simpleDesktopLink>
+            <a *ngIf="item.route; else scrollDesktopLink" [routerLink]="item.route" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }" class="no-underline hover:text-yellow-400">
+              {{ item.label }}
+            </a>
+            <ng-template #scrollDesktopLink>
+              <a class="no-underline hover:text-yellow-400 cursor-pointer" (click)="scrollToSection(item.section!)">
+                {{ item.label }}
+              </a>
+            </ng-template>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 

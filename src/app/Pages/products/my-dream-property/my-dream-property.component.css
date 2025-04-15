@@ -1,0 +1,14 @@
+/* Gradient Background */
+/* Gradient Background */
+.bg-gradient-green {
+  background: linear-gradient(to bottom right, #ffffff, #e6f4ea, #c6f2d1);
+}
+
+/* Card Hover */
+.hoverable-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hoverable-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+}

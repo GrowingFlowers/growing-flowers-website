@@ -1,1 +1,85 @@
-<p>footer works!</p>
+<!-- Footer -->
+<footer class="text-black-alpha-90 bg-gray-100 px-2 mt-0">
+  <div class="grid text-center sm:text-left px-5 mb-5">
+
+    <!-- Logo & Description Section -->
+    <div class="col-12 sm:col-6 lg:col-3 flex flex-column align-items-center sm:align-items-start mt-4">
+      <a [routerLink]="['/home']">
+        <img src="../../../assets/Logo/logo_100.png" alt="Logo" class="mb-0 border-round w-18rem" />
+      </a>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="col-12 sm:col-6 lg:col-3 flex flex-column sm:align-items-start align-items-center mt-4 sm:mt-0">
+      <p class="text-2xl font-bold mb-2 mt-4">Quick Links</p>
+      <ul class="list-none p-0 m-0 text-xl text-left w-full">
+        <li class="mb-3 cursor-pointer hover:text-primary" [routerLink]="['/home']">Home</li>
+        <li class="mb-3 cursor-pointer hover:text-primary" [routerLink]="['/services']">Services</li>
+        <li class="mb-3 cursor-pointer hover:text-primary" [routerLink]="['/careers']">Careers</li>
+        <li class="mb-3 cursor-pointer hover:text-primary" [routerLink]="['/contact-us']">Contact Us</li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="col-12 sm:col-6 lg:col-3 flex flex-column sm:align-items-start align-items-center mt-4 lg:mt-0">
+      <p class="text-2xl font-bold mb-2 mt-4">Services</p>
+      <ul class="list-none p-0 m-0 text-xl text-left w-full">
+        <li class="mb-3 cursor-pointer">Product Engineering</li>
+        <li class="mb-3 cursor-pointer">Custom Software Development</li>
+        <li class="mb-3 cursor-pointer">Mobile App Development</li>
+        <li class="mb-3 cursor-pointer">Cloud Solutions</li>
+        <li class="mb-3 cursor-pointer">Web Development</li>
+        <li class="mb-3 cursor-pointer">DevOps</li>
+      </ul>
+    </div>
+
+    <!-- Get In Touch -->
+    <div class="col-12 sm:col-6 lg:col-3 flex flex-column sm:align-items-start align-items-center mt-4 lg:mt-0">
+      <p class="text-2xl font-bold mb-2 mt-4">Get In Touch</p>
+      <ul class="list-none p-0 m-0 text-xl text-left w-full">
+        <a href="https://www.google.com/maps?q=Growingflowers+Software+Solutions+LLP" target="_blank"
+          class="no-underline text-black-alpha-90">
+          <li class="flex align-items-center mb-3 cursor-pointer hover:text-primary">
+            <i class="pi pi-map-marker mr-2"></i>Pune, Maharashtra
+          </li>
+        </a>
+        <a href="tel:+919876543210" class="no-underline text-black-alpha-90">
+          <li class="flex align-items-center mb-3 cursor-pointer hover:text-primary">
+            <i class="pi pi-phone mr-2"></i> +91 9876543210
+          </li>
+        </a>
+        <li class="flex align-items-center mb-3 cursor-pointer">
+          <i class="pi pi-envelope mr-2 text-black-alpha-90"></i>
+          <a href="mailto:contactus@growingflowers-solutions.com"
+            class="no-underline text-black-alpha-90 hover:text-primary transition-colors duration-200">
+            contactus&#64;growingflowers-solutions.com
+          </a>
+        </li>
+        <li class="flex align-items-center mb-3">
+          <i class="pi pi-clock mr-2"></i> 9:00 am - 6:00 pm (Mon-Fri)
+        </li>
+        <li class="flex gap-4 mt-2">
+          <i class="pi pi-facebook text-3xl cursor-pointer hover:text-primary"></i>
+          <i class="pi pi-twitter text-3xl cursor-pointer hover:text-primary"></i>
+          <i class="pi pi-instagram text-3xl cursor-pointer hover:text-primary"></i>
+          <a href="https://www.linkedin.com/company/growing-flowers-software-solution-llp/" target="_blank"
+            class="list-none text-black-alpha-90">
+            <i class="pi pi-linkedin text-3xl cursor-pointer hover:text-primary"></i>
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank" class="list-none text-black-alpha-90">
+            <i class="pi pi-whatsapp text-3xl cursor-pointer hover:text-primary"></i>
+          </a>
+
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="flex justify-content-center px-3 py-4 text-center">
+    <p class="text-base md:text-xl font-bold text-primary m-0 uppercase">
+      Copyright &copy; 2025 GROWINGFLOWERS SOFTWARE SOLUTIONS LLP - All Rights Reserved.
+    </p>
+  </div>
+</footer>
