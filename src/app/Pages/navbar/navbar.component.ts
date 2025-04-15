@@ -1,4 +1,3 @@
-// TS
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
@@ -46,30 +45,28 @@ export class NavbarComponent {
   scrollToSection(section: string) {
     debugger;
     console.log('Section: ', section);
+  
     if (this.router.url !== '/home') {
       this.router.navigate([section]);
-      // this.router.navigate(['/home']).then(() => {
-      //   setTimeout(() => {
-      //     debugger;
-      //     const element = document.getElementById(section);
-      //     console.log('Element: ',element);
-      //     if (element) {
-      //       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      //       this.activeSection = section;
-      //     }
-      //   }, 100);
-      // });
     } else {
       const element = document.getElementById(section);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerOffset = 120; // Adjust this to match your sticky header height
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+  
         this.activeSection = section;
       }
     }
-
+  
     this.sidebarVisible = false;
   }
-
+  
 
   // isItemActive(item: any): boolean {
   //   if (item.type === 'route') {
