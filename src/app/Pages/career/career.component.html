@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-
+ 
 <!-- 🌟 Careers Section -->
 <div class="p-3 sm:p-6 lg:p-5">
   <!-- Title & Subtitle -->
@@ -10,30 +10,35 @@
       want to build innovative
       and meaningful experiences.
     </p>
+ 
   </div>
-
+ 
   <!-- Job Cards -->
   <div class="flex flex-column align-items-center gap-5">
     <div class="w-full md:w-10 lg:w-8" *ngFor="let job of jobs">
-      <p-card class="custom-card w-full border-round-xl shadow-5 surface-100 dark:surface-800 border-1">
+      <p-card class="custom-card w-full border-round-xl surface-100 dark:surface-800 border-1 border-gray-300 dark:border-gray-600">
         <ng-template pTemplate="header">
           <h2 class="text-2xl font-bold mt-3 ml-4 text-color">{{ job.title }}</h2>
         </ng-template>
-
+     
         <p class="my-2 text-base md:text-lg px-3 text-color">{{ job.description }}</p>
-
+     
         <div class="px-3 mt-3 text-md md:text-lg text-color">
           <p class="mb-1"><strong>Experience:</strong> {{ job.experience }}</p>
           <p><strong>Technologies:</strong> {{ job.technologies.join(', ') }}</p>
         </div>
-
+     
         <ng-template pTemplate="footer">
           <div class="flex justify-content-between align-items-center mt-3 px-3 pb-3">
             <span class="text-lg font-bold text-color">
               <i class="pi pi-map-marker text-blue-700 mr-1"></i>{{ job.location }}
             </span>
-            <button pButton label="Apply" icon="pi pi-arrow-right"
-              class="p-button-rounded p-button-success p-button-md text-white" (click)="apply(job)">
+            <button
+              pButton
+              label="Apply"
+              icon="pi pi-arrow-right"
+              class="p-button-rounded p-button-success p-button-md text-white"
+              (click)="apply(job)">
             </button>
           </div>
         </ng-template>
@@ -41,13 +46,13 @@
     </div>
   </div>
 </div>
-
+ 
 <!-- 🌟 Application Dialog Form -->
 <p-dialog header="Apply Now!" [(visible)]="displayDialog" [modal]="true" [style]="{ width: '800px' }" [closable]="true"
   [dismissableMask]="true" [draggable]="false" [responsive]="true">
   <form [formGroup]="applicationForm" (ngSubmit)="submitApplication()" novalidate>
     <div class="formgrid grid p-fluid">
-
+ 
       <!-- Name -->
       <div class="field col-12 md:col-6">
         <label for="name">Name</label>
@@ -56,7 +61,7 @@
         <small *ngIf="applicationForm.controls['name'].invalid && applicationForm.controls['name'].touched"
           class="text-red-500">Name is required</small>
       </div>
-
+ 
       <!-- Email -->
       <div class="field col-12 md:col-6">
         <label for="email">Email</label>
@@ -65,7 +70,7 @@
         <small *ngIf="applicationForm.controls['email'].invalid && applicationForm.controls['email'].touched"
           class="text-red-500">Valid email is required</small>
       </div>
-
+ 
       <!-- Phone -->
       <div class="field col-12 md:col-6">
         <label for="phone">Phone</label>
@@ -74,16 +79,16 @@
         <small *ngIf="applicationForm.controls['phone'].invalid && applicationForm.controls['phone'].touched"
           class="text-red-500">Phone is required</small>
       </div>
-
+ 
       <!-- Position -->
       <div class="field col-12 md:col-6">
         <label for="position">Applying For</label>
-        <p-dropdown [options]="jobOptions" formControlName="position" placeholder="Select a position" class="w-full"
-          appendTo="body"></p-dropdown>
+        <p-dropdown [options]="jobOptions" formControlName="position" placeholder="Select a position"
+          class="w-full" appendTo="body"></p-dropdown>
         <small *ngIf="applicationForm.controls['position'].invalid && applicationForm.controls['position'].touched"
           class="text-red-500">Please select a position</small>
       </div>
-
+ 
       <!-- Resume Upload -->
       <div class="field col-12">
         <label for="resume">Upload Resume</label>
@@ -91,7 +96,7 @@
           uploadLabel="Upload" [auto]="true">
         </p-fileUpload>
         <small *ngIf="resumeError" class="text-red-500">Please upload your resume</small>
-
+ 
         <!-- Resume Preview -->
         <ng-container *ngIf="applicationForm.value.resume">
           <div class="mt-2 text-sm text-gray-700">
@@ -103,14 +108,17 @@
           </div>
         </ng-container>
       </div>
-
+ 
       <!-- Submit Button -->
       <div class="col-12 text-left mt-2">
         <button pButton type="submit" label="Submit" icon="pi pi-check"
-          [disabled]="applicationForm.invalid || !applicationForm.value.resume" class="p-button-success"></button>
+          [disabled]="applicationForm.invalid || !applicationForm.value.resume"
+          class="p-button-success text-white"></button>
       </div>
     </div>
   </form>
 </p-dialog>
-
+ 
 <app-footer></app-footer>
+ 
+ 

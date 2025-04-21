@@ -1,11 +1,16 @@
-.custom-card {
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    background-color: var(--surface-card);
-    border: 1px solid var(--surface-border);
+:host ::ng-deep .custom-card {
+    display: block;
+    /* Make sure it’s a block element */
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(87, 193, 133, 0.15);
 }
 
-.custom-card:hover {
-    border-color: var(--primary-color);
+:host ::ng-deep .custom-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    background-color: #f9f9f9;
+    /* Optional */
+    cursor: pointer;
 }
 
 /* career.component.css */
