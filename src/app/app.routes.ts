@@ -6,17 +6,8 @@ import { MyDreamPropertyComponent } from './Pages/products/my-dream-property/my-
 import { CareerComponent } from './Pages/career/career.component';
 import { ServicesComponent } from './Pages/services/services.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
-import { MatrimonyComponent } from './Pages/domains/main-domains/matrimony/matrimony.component';
-import { RealEstateComponent } from './Pages/domains/main-domains/real-estate/real-estate.component';
-import { HealthcareComponent } from './Pages/domains/main-domains/healthcare/healthcare.component';
-import { EducationComponent } from './Pages/domains/main-domains/education/education.component';
-import { ShortMatrimonyComponent } from './Pages/domains/short-domains/short-matrimony/short-matrimony.component';
-import { ShortRealEstateComponent } from './Pages/domains/short-domains/short-real-estate/short-real-estate.component';
-import { ShortHealthcareComponent } from './Pages/domains/short-domains/short-healthcare/short-healthcare.component';
-import { ShortEducationComponent } from './Pages/domains/short-domains/short-education/short-education.component';
-import { FaqComponent } from './Pages/faq/faq.component';
-import { BeVibestarComponent } from './Pages/products/be-vibestar/be-vibestar.component';
 import { LifeAtGFSSComponent } from './Pages/company/life-at-gfss/life-at-gfss.component';
+import { VideosComponent } from './Pages/company/videos/videos.component';
 
 export const routes: Routes = [
     {
@@ -39,6 +30,10 @@ export const routes: Routes = [
             {
                 path: 'life-at-gfss',
                 component: LifeAtGFSSComponent
+            },
+            {
+                path:'videos',
+                component:VideosComponent
             }
         ]
     },
@@ -55,55 +50,6 @@ export const routes: Routes = [
                 path: 'my-dream-property',
                 component: MyDreamPropertyComponent
             },
-            {
-                path: 'be-vibestar',
-                component: BeVibestarComponent
-            }
-        ]
-    },
-
-    // Main Domains
-    {
-        path: 'domains',
-        children: [
-            {
-                path: 'matrimony',
-                component: MatrimonyComponent
-            },
-            {
-                path: 'real-estate',
-                component: RealEstateComponent
-            },
-            {
-                path: 'healthcare',
-                component: HealthcareComponent
-            },
-            {
-                path: 'education',
-                component: EducationComponent
-            }
-        ]
-    },
-
-    // Short Domains
-    {
-        path: 'short-domains',
-        children: [{
-            path: 'matrimony',
-            component: ShortMatrimonyComponent
-        },
-        {
-            path: 'real-estate',
-            component: ShortRealEstateComponent
-        },
-        {
-            path: 'healthcare',
-            component: ShortHealthcareComponent
-        },
-        {
-            path: 'education',
-            component: ShortEducationComponent
-        }
         ]
     },
 
@@ -122,8 +68,4 @@ export const routes: Routes = [
         component: ContactUsComponent
     },
 
-    {
-        path: 'faq',
-        component: FaqComponent
-    }
 ];

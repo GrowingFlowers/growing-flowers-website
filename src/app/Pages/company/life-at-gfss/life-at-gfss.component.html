@@ -9,16 +9,67 @@
   </p>
 
   <div class="gallery">
-    <p-accordion [(activeIndex)]="mainAccordionActive" [multiple]="true" class="p-3 text-xl">
-      <p-accordionTab header="Life at GrowingFlowers Software Solutions">
-        <div class="grid">
+    <p-accordion [(activeIndex)]="mainAccordionActive" [multiple]="true" expandIcon="none" collapseIcon="none" class="p-3 text-2xl custom-accordion">
+  
+      <!-- Tab 1 -->
+      <p-accordionTab>
+        <ng-template pTemplate="header">
+          <div class="flex justify-content-between align-items-center w-full font-bold cursor-pointer gap-2">
+            <span>Team Events</span>
+            <i class="pi transition-transform duration-300 text-xl font-bold mr-2" [ngClass]="{
+              'pi-plus': !mainAccordionActive.includes(0),
+              'pi-minus': mainAccordionActive.includes(0)
+            }"></i>
+          </div>
+        </ng-template>
+        
+        <div class="grid mt-2">
           <div class="col-12 md:col-4" *ngFor="let photo of photos">
-            <img [src]="photo.url" [alt]="photo.alt" class="w-full border-round shadow-2" />
+            <img [src]="photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
           </div>
         </div>
       </p-accordionTab>
+  
+      <!-- Tab 2 -->
+      <p-accordionTab>
+        <ng-template pTemplate="header">
+          <div class="flex justify-content-between align-items-center w-full font-bold cursor-pointer gap-2">
+            <span>Sports</span>
+            <i class="pi transition-transform duration-300 text-xl font-bold mr-2" [ngClass]="{
+              'pi-plus': !mainAccordionActive.includes(1),
+              'pi-minus': mainAccordionActive.includes(1)
+            }"></i>
+          </div>
+        </ng-template>
+        <div class="grid mt-2">
+          <div class="col-12 md:col-4" *ngFor="let photo of photos">
+            <img [src]="photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
+          </div>
+        </div>
+      </p-accordionTab>
+  
+      <!-- Tab 3 -->
+      <p-accordionTab>
+        <ng-template pTemplate="header">
+          <div class="flex justify-content-between align-items-center w-full font-bold cursor-pointer gap-2">
+            <span>Office Vibes</span>
+            <i class="pi transition-transform duration-300 text-xl font-bold mr-2" [ngClass]="{
+              'pi-plus': !mainAccordionActive.includes(2),
+              'pi-minus': mainAccordionActive.includes(2)
+            }"></i>
+          </div>
+        </ng-template>
+        <div class="grid mt-2">
+          <div class="col-12 md:col-4" *ngFor="let photo of photos">
+            <img [src]="photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
+          </div>
+        </div>
+      </p-accordionTab>
+  
     </p-accordion>
   </div>
+  
+
 </section>
 
 

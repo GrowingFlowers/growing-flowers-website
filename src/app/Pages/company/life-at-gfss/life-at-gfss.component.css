@@ -1,0 +1,5 @@
+/* Image hover effect (you already had this) */
+.about-img:hover {
+  transform: scale(1.04);
+  transition: transform 0.3s ease;
+}

@@ -34,22 +34,14 @@ export class HomeComponent {
       route: '/products/my-dream-property',
       badge: 'Coming Soon',
     },
-    {
-      title: 'Be VibeStar',
-      image: '../../../../assets/products/be-vibestar.jpg',
-      description: `Create, connect, and vibe with real followers. 
-      A bold social platform with AI filters and smart privacy.`,
-      route: '/products/be-vibestar',
-      badge: 'Coming Soon',
-    },
-    {
-      title: 'My Dream Property',
-      image: '../../../../assets/products/mdp.png',
-      description: `Find top residential and commercial properties backed by reliable insights and support.
-      Designed for buyers and investors alike.`,
-      route: '/products/my-dream-property',
-      badge: 'Coming Soon',
-    },
+    // {
+    //   title: 'Be VibeStar',
+    //   image: '../../../../assets/products/be-vibestar.jpg',
+    //   description: `Create, connect, and vibe with real followers. 
+    //   A bold social platform with AI filters and smart privacy.`,
+    //   route: '/products/be-vibestar',
+    //   badge: 'Coming Soon',
+    // },
   ];
   
   

@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 10%;
+  padding: 0px 11%;
 }
 
 .hero-text {
@@ -12,15 +12,8 @@
   flex: 1 1 50%;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #0c1b3b;
-  line-height: 1.3;
-}
-
 .highlight {
-  color: #5CE65C;
+  color: #1bce1b;
 }
 
 .hover-g {
@@ -30,7 +23,7 @@
 
 .hover-g:hover {
   transform: scale(1.2) rotate(-5deg);
-  color: #5CE65C;
+  color: #0dc20d;
   cursor: pointer;
 }
 
@@ -38,24 +31,6 @@
   margin-top: 20px;
   font-size: 1.2rem;
   color: #444;
-}
-
-.btn-green {
-  background-color: #5CE65C;
-  border: none;
-  padding: 14px 32px;
-  border-radius: 50px;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 30px;
-  transition: background 0.3s ease, transform 0.2s;
-  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
-}
-
-.btn-green:hover {
-  background-color: #5CE65C;
-  transform: scale(1.05);
 }
 
 .hero-image {
@@ -83,56 +58,13 @@
   .hero-text h1 {
     font-size: 2.4rem;
   }
-
-  .btn-green {
-    width: 100%;
-  }
-
+  
   .hero-image {
     margin-top: 40px;
   }
 }
 
 /* Our Products */
-/* Ensure image container is relative for badge placement
-.image-container {
-  position: relative;
-}
-
-.badge-container {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  z-index: 2;
-}
-
-.product-badge {
-  padding: 0.3rem 0.75rem;
-  font-weight: bold;
-  font-size: 0.8rem;
-  color: #fff;
-  border-radius: 20px;
-  display: inline-block;
-}
-
-.new-badge {
-  background-color: #10b981; 
-}
-
-.coming-soon-badge {
-  background-color: #f59e0b; 
-} */
-
-/* Prevent badge from overlapping title on small screens */
-/* @media (max-width: 768px) {
-  .badge-container {
-    top: 0.3rem;
-    left: 0.3rem;
-    transform: scale(0.85);
-  }
-} */
-
-
 .image-container {
   position: relative;
 }
@@ -178,7 +110,6 @@
 /* Careers and Contact Section */
 .vertical-divider {
   width: 2px;
-  background-color: #666;
   height: 250px;
 }
 

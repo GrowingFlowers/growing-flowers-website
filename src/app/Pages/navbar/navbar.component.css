@@ -13,24 +13,11 @@
   color: #FFC436;
 }
 
-.text-black {
-  color: #000 !important;
-}
-
 /* Sticky Navbar */
 nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #f9fafb !important;
-  color: #000 !important;
-}
-
-/* Ensure light theme */
-::ng-deep .custom-sidebar,
-::ng-deep .custom-sidebar *,
-::ng-deep .custom-navbar,
-::ng-deep .custom-navbar * {
   background-color: #f9fafb !important;
   color: #000 !important;
 }

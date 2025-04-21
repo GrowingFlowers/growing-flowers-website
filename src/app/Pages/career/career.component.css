@@ -5,7 +5,6 @@
 }
 
 .custom-card:hover {
-    box-shadow: var(--shadow-5);
     border-color: var(--primary-color);
 }
 
@@ -15,5 +14,4 @@
     font-size: 0.875rem;
     margin-top: 4px;
     display: block;
-  }
-  
+}
