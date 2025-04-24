@@ -1,42 +1,42 @@
 <app-navbar></app-navbar>
 
-<div class="surface-0 px-4 py-6 md:px-6 lg:px-8">
+<div class="bg-white px-4 py-6 md:px-6 lg:px-8">
   <div class="grid align-items-center">
     <!-- Left Section: Text -->
     <div class="col-12 md:col-6">
-      <h2 class="text-4xl md:text-5xl font-bold mb-2">Who We Are ?</h2>
-      <p class="text-xl text-color-secondary mb-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-2 text-black-alpha-90">Who We Are ?</h2>
+      <p class="text-xl text-black-alpha-90-secondary mb-4">
         At <strong>GrowingFlowers Software Solutions,</strong>We craft elegant, scalable, and user-centric digital
         experiences through expert web development, innovative cloud solutions, and intuitive app development.
       </p>
       <ul class="list-none p-0 m-0 text-lg">
         <li class="flex align-items-start mb-3">
           <i class="pi pi-check-circle text-green-600 mr-2 text-xl"></i>
-          <span>Responsive, modern websites designed with performance and usability in mind.</span>
+          <span class="text-black-alpha-90">Responsive, modern websites designed with performance and usability in mind.</span>
         </li>
         <li class="flex align-items-start mb-3">
           <i class="pi pi-check-circle text-green-600 mr-2 text-xl"></i>
-          <span>Scalable, secure cloud architectures to support your business growth and flexibility.</span>
+          <span class="text-black-alpha-90">Scalable, secure cloud architectures to support your business growth and flexibility.</span>
         </li>
         <li class="flex align-items-start mb-3">
           <i class="pi pi-check-circle text-green-600 mr-2 text-xl"></i>
-          <span>Intuitive mobile experiences for iOS and Android, tailored to your users’ needs.</span>
+          <span class="text-black-alpha-90">Intuitive mobile experiences for iOS and Android, tailored to your users’ needs.</span>
         </li>
         <li class="flex align-items-start mb-3">
           <i class="pi pi-check-circle text-green-600 mr-2 text-xl"></i>
-          <span>Fully tailored software solutions aligned with your business goals and processes.</span>
+          <span class="text-black-alpha-90">Fully tailored software solutions aligned with your business goals and processes.</span>
         </li>
         <li class="flex align-items-start mb-3">
           <i class="pi pi-check-circle text-green-600 mr-2 text-xl"></i>
-          <span>Beautiful, user-centered interfaces that enhance usability and engagement.</span>
+          <span class="text-black-alpha-90">Beautiful, user-centered interfaces that enhance usability and engagement.</span>
         </li>
         <li class="flex align-items-start mb-3">
           <i class="pi pi-check-circle text-green-600 mr-2 text-xl"></i>
-          <span>Systems built to grow with your business—robust, maintainable, and future-ready.</span>
+          <span class="text-black-alpha-90">Systems built to grow with your business—robust, maintainable, and future-ready.</span>
         </li>
         <li class="flex align-items-start mb-3">
           <i class="pi pi-check-circle text-green-600 mr-2 text-xl"></i>
-          <span>Dedicated support, regular updates, and a commitment to your long-term success.</span>
+          <span class="text-black-alpha-90">Dedicated support, regular updates, and a commitment to your long-term success.</span>
         </li>
       </ul>
     </div>
@@ -50,10 +50,10 @@
 </div>
 
 <!-- Team Section -->
-<div class="surface-0 text-center py-6 px-4 sm:px-6 lg:px-8">
-  <h2 class="text-4xl md:text-5xl font-bold text-center mb-2">Our Team</h2>
+<div class="text-center py-6 px-4 sm:px-6 lg:px-8">
+  <h2 class="text-4xl md:text-5xl font-bold text-center mb-2 text-black-alpha-90">Our Team</h2>
   <p class="text-lg text-color-secondary mb-5 max-w-3xl mx-auto">
-    At Growing Flowers Software Solutions, we build modern, scalable, and meaningful web solutions.
+    At GrowingFlowers Software Solutions, we build modern, scalable, and meaningful dynamic solution.
   </p>
 
   <p-carousel [value]="team" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="5000"
@@ -82,8 +82,8 @@
   <p-dialog header="{{ selectedMember?.name }}" [(visible)]="displayProfileDialog" [modal]="true"
     [style]="{ width: '400px' }" [closable]="true" [dismissableMask]="true" class="p-fluid border-round-xl">
     <ng-container *ngIf="selectedMember">
-      <p class="text-base md:text-lg text-color-secondary text-left">{{ selectedMember.bio}}</p> <br>
-      <p class="text-base md:text-lg text-color-secondary text-left">
+      <p class="text-base md:text-lg text-color text-left">{{ selectedMember.bio}}</p> <br>
+      <p class="text-base md:text-lg text-color text-left">
         <span class="text-base md:text-lg font-bold">Email: </span>
         <a [href]="'mailto:' + selectedMember.mail" class="text-primary underline hover:text-primary-700">
           {{ selectedMember.mail }}

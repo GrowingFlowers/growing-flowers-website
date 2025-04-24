@@ -2,7 +2,7 @@
 
 <section
   class="flex justify-content-center align-items-center py-4 px-3">
-  <div class="grid w-full md:h-full">
+  <div class="grid w-full md:h-full my-5">
 
     <!-- Map Column -->
     <div class="col-12 md:col-6 mb-4 md:mb-0 px-3 flex">
@@ -19,11 +19,11 @@
   
     <!-- Form Column -->
     <div class="col-12 md:col-6 px-3 flex">
-      <div class="p-3 surface-0 border-round shadow-3 w-full h-full">
+      <div class="p-3 bg-white border-round shadow-3 w-full h-full">
   
         <!-- Heading -->
         <div class="text-center mb-4">
-          <h2 class="text-4xl md:text-5xl font-bold text-color mb-2">Get in touch</h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-black-alpha-90 mb-2">Get in touch</h2>
           <p class="text-green-700 text-base md:text-xl mb-6">
             Start your journey on expanding your company and making your business better, more agile and profitable.
           </p>
@@ -35,9 +35,9 @@
   
             <!-- Name -->
             <div class="field col-12 md:col-6">
-              <label for="name" class="block font-semibold mb-1">Name</label>
+              <label for="name" class="block font-semibold text-black-alpha-90 mb-1">Name</label>
               <input id="name" type="text" formControlName="name"
-                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                class="text-base p-2 border-1 border-solid bg-white border-round w-full outline-none focus:border-primary"
                 [ngClass]="{'p-invalid': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}" />
               <small *ngIf="contactForm.get('name')?.hasError('required') && contactForm.get('name')?.touched"
                 class="p-error">Name is required.</small>
@@ -47,9 +47,9 @@
   
             <!-- Email -->
             <div class="field col-12 md:col-6">
-              <label for="email" class="block font-semibold mb-1">Email</label>
+              <label for="email" class="block font-semibold text-black-alpha-90 mb-1">Email</label>
               <input id="email" type="text" formControlName="email"
-                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                class="text-base p-2 border-1 border-solid bg-white text-black-alpha-90 border-round w-full outline-none focus:border-primary"
                 [ngClass]="{'p-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}" />
               <small *ngIf="contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched"
                 class="p-error">Email is required.</small>
@@ -59,9 +59,9 @@
   
             <!-- Phone -->
             <div class="field col-12 md:col-6">
-              <label for="phone" class="block font-semibold mb-1">Phone</label>
+              <label for="phone" class="block font-semibold text-black-alpha-90 mb-1">Phone</label>
               <input id="phone" type="text" formControlName="phone"
-                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                class="text-base p-2 border-1 border-solid bg-white text-black-alpha-90 border-round w-full outline-none focus:border-primary"
                 [ngClass]="{'p-invalid': contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched}" />
               <small *ngIf="contactForm.get('phone')?.hasError('required') && contactForm.get('phone')?.touched"
                 class="p-error">Contact number is required.</small>
@@ -69,9 +69,9 @@
   
             <!-- Subject -->
             <div class="field col-12 md:col-6">
-              <label for="subject" class="block font-semibold mb-1">Subject</label>
+              <label for="subject" class="block font-semibold text-black-alpha-90 mb-1">Subject</label>
               <input id="subject" type="text" formControlName="subject"
-                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                class="text-base p-2 border-1 border-solid bg-white text-black-alpha-90 border-round w-full outline-none focus:border-primary"
                 [ngClass]="{'p-invalid': contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched}" />
               <small *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched"
                 class="p-error">Subject is required.</small>
@@ -79,9 +79,9 @@
   
             <!-- Message -->
             <div class="field col-12">
-              <label for="message" class="block font-semibold mb-1">Message</label>
+              <label for="message" class="block font-semibold text-black-alpha-90 mb-1">Message</label>
               <textarea pInputTextarea id="message" formControlName="message" rows="4"
-                class="text-base p-2 border-1 border-solid surface-border border-round w-full outline-none focus:border-primary"
+                class="text-base p-2 border-1 border-solid bg-white text-black-alpha-90 border-round w-full outline-none focus:border-primary"
                 autoResize
                 [ngClass]="{'p-invalid': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}">
               </textarea>

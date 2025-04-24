@@ -1,40 +1,36 @@
 <nav class="w-full z-5 shadow-1" style="position: sticky; top: 0;">
-  <div class="navbar flex align-items-center justify-content-between px-4 py-2 surface-50">
- 
+  <div class="navbar flex align-items-center justify-content-between px-4 py-2 gradient-white-6">
     <!-- Logo -->
     <a routerLink="/home">
       <img src="../../../assets/Logo/try/logo_90_B.png" alt="Logo" class="h-6rem w-6rem object-contain" />
     </a>
- 
-    <!-- Toggle for Mobile -->
+
+    <!-- Mobile Toggle Button -->
     <button pButton icon="pi pi-bars" class="lg:hidden m-4 ml-auto" (click)="sidebarVisible = true"></button>
 
-    <!-- Sidebar for Mobile -->
-    <p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="10000" position="right" [style]="{ width: '250px' }">
+    <!-- Mobile Sidebar -->
+    <p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="10000" position="right" [style]="{ width: '250px' }"
+      styleClass="custom-sidebar gradient-white-6">
       <ul class="list-none p-0 m-0">
         <li *ngFor="let item of items" class="mb-3 text-xl font-bold mx-3">
-          <ng-container *ngIf="item.subItems; else simpleLink">
+          <ng-container *ngIf="item.subItems; else simpleMobileLink">
             <div class="flex justify-content-between align-items-center cursor-pointer"
               (click)="toggleDropdown(item.label, $event)">
-              <span
-                [ngClass]="{ 'active-link text-color': isItemActive(item), 'text-color': !isItemActive(item) }">
-                {{ item.label }}
-              </span>
+              <span [ngClass]="{'active-dropdown': isDropdownActive(item)}">{{ item.label }}</span>
               <i class="pi" [ngClass]="dropdownStates[item.label] ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
             </div>
             <ul *ngIf="dropdownStates[item.label]" class="pl-3 mt-2">
-              <li *ngFor="let sub of item.subItems" class="mb-2 text-lg list-none">
-                <a [routerLink]="sub.route" routerLinkActive="active-link" class="no-underline hover:text-yellow-400"
-                  [ngClass]="{ 'active-link text-color': router.url === sub.route, 'text-color': router.url !== sub.route }">
+              <li *ngFor="let sub of item.subItems" class="list-none mb-2 text-lg">
+                <a [routerLink]="sub.route" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+                  class="no-underline" (click)="sidebarVisible = false">
                   {{ sub.label }}
                 </a>
               </li>
             </ul>
           </ng-container>
-
-          <ng-template #simpleLink>
-            <a [routerLink]="item.route" routerLinkActive="active-link" class="no-underline hover:text-yellow-400"
-              [ngClass]="{ 'active-link text-color': router.url === item.route, 'text-color': router.url !== item.route }">
+          <ng-template #simpleMobileLink>
+            <a *ngIf="item.route" [routerLink]="item.route" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }" class="no-underline" (click)="sidebarVisible = false">
               {{ item.label }}
             </a>
           </ng-template>
@@ -43,41 +39,39 @@
     </p-sidebar>
 
     <!-- Desktop Navigation -->
-    <div class="hidden lg:flex align-items-center">
-      <ul class="flex list-none m-0">
+    <div class="hidden lg:flex align-items-center custom-navbar">
+      <ul class="flex text-black-alpha-90 list-none m-0">
         <li *ngFor="let item of items" class="relative mx-5 font-bold text-2xl group">
-          <ng-container *ngIf="item.subItems; else desktopLink">
+          <ng-container *ngIf="item.subItems; else simpleDesktopLink">
             <div class="flex align-items-center cursor-pointer relative" (mouseenter)="openDropdown(item.label)"
               (mouseleave)="closeDropdown(item.label)">
-              <a class="no-underline hover:text-yellow-400"
-                [ngClass]="{ 'active-link text-color': isItemActive(item), 'text-color': !isItemActive(item) }">
+              <span [ngClass]="{
+                    'active-dropdown': isDropdownActive(item),
+                    'active-dropdown-title': isSubItemActive(item)
+                  }">
                 {{ item.label }}
-              </a>
-              <i class="pi pi-chevron-down ml-2 text-color"></i>
-
-              <!-- Submenu -->
+              </span>
+              <i class="pi pi-chevron-down ml-2"></i>
               <ul *ngIf="dropdownStates[item.label]"
-                class="absolute top-100 left-0 surface-overlay shadow-2 border-round p-2 w-15rem z-5"
+                class="absolute top-100 left-0 surface-overlay shadow-2 border-round p-2 w-15rem z-5 custom-dropdown"
                 (mouseenter)="openDropdown(item.label)" (mouseleave)="closeDropdown(item.label)">
-                <li *ngFor="let sub of item.subItems" class="py-2 px-3 text-lg list-none">
-                  <a [routerLink]="sub.route" routerLinkActive="active-link" class="hover:text-yellow-500 no-underline"
-                    [ngClass]="{ 'active-link text-color': router.url === sub.route, 'text-color': router.url !== sub.route }">
+                <li *ngFor="let sub of item.subItems" class="list-none py-2 px-3 text-lg">
+                  <a [routerLink]="sub.route" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+                    class="no-underline custom-dropdown" (click)="markAsActive(item, sub)">
                     {{ sub.label }}
                   </a>
                 </li>
               </ul>
             </div>
           </ng-container>
-
-          <ng-template #desktopLink>
-            <a [routerLink]="item.route" routerLinkActive="active-link" class="no-underline hover:text-yellow-400"
-              [ngClass]="{ 'active-link text-color': router.url === item.route, 'text-color': router.url !== item.route }">
+          <ng-template #simpleDesktopLink>
+            <a *ngIf="item.route" [routerLink]="item.route" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }" class="no-underline">
               {{ item.label }}
             </a>
           </ng-template>
         </li>
       </ul>
     </div>
-
   </div>
 </nav>

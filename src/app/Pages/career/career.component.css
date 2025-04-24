@@ -1,5 +1,4 @@
 :host ::ng-deep .custom-card {
-    display: block;
     /* Make sure it’s a block element */
     transition: all 0.3s ease;
     box-shadow: 0 8px 24px rgba(87, 193, 133, 0.15);
@@ -7,10 +6,10 @@
 
 :host ::ng-deep .custom-card:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transform: translateY(-4px);
+    transform: translateY(-20px);
     background-color: #f9f9f9;
-    /* Optional */
     cursor: pointer;
+    border: 3px solid #92DF72;
 }
 
 /* career.component.css */

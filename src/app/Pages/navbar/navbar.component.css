@@ -5,19 +5,69 @@
   border-bottom: 2px solid #06a70e !important;
 }
 
-.nav-link {
-  transition: color 0.3s ease-in-out;
+/* Remove hover effect from nav-link and dropdown title */
+.nav-link:hover,
+.active-dropdown:hover {
+  color: inherit !important;
+  /* Prevent any hover color change */
+  background-color: inherit !important;
+  /* Prevent background color change */
 }
 
-.nav-link:hover {
-  color: #FFC436;
+/* Ensure light theme */
+::ng-deep .custom-navbar,
+::ng-deep .custom-navbar * {
+  background-color: transparent !important;
+  color: #000 !important;
 }
 
-/* Sticky Navbar */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+::ng-deep .custom-dropdown,
+::ng-deep .custom-dropdown * {
   background-color: #f9fafb !important;
   color: #000 !important;
+}
+
+/* Ensure light theme */
+::ng-deep .custom-sidebar,
+::ng-deep .custom-sidebar * {
+  background-color: #f9fafb !important;
+  color: #000 !important;
+}
+
+/* Green Mint Mist */
+.gradient-white-6 {
+  background: linear-gradient(135deg, #ffffff, #9ae6b4);
+}
+
+/* Highlight dropdown item when active */
+.active-dropdown {
+  color: #06a70e !important;
+  font-weight: bold;
+}
+
+/* Highlight dropdown title when active */
+.navbar .group>.flex>span.active-dropdown-title {
+  color: #06a70e !important;
+  font-weight: bold;
+}
+
+/* Disable dropdown title hover color change */
+.navbar .group>.flex>span {
+  color: inherit !important;
+}
+
+.navbar .group>.flex>span:hover {
+  color: inherit !important;
+  background-color: inherit !important;
+}
+
+/* Highlight dropdown title when its sub-items are active */
+.active-dropdown-title {
+  color: #06a70e !important;
+  font-weight: bold;
+}
+
+/* Adjusting styles for active dropdown icon */
+.navbar .group>.flex>i.pi-chevron-down {
+  color: #06a70e !important;
 }

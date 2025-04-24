@@ -9,13 +9,13 @@ import { SidebarModule } from 'primeng/sidebar';
   standalone: true,
   imports: [SidebarModule, CommonModule, RouterModule, ButtonModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
   sidebarVisible = false;
   dropdownStates: { [key: string]: boolean } = {};
-  isVisible = true;
-  previousScroll = 0;
+  activeItem: any = null; // Store active item
+  activeSubItem: any = null; // Store active sub-item
 
   constructor(public router: Router) {}
 
@@ -36,18 +36,10 @@ export class NavbarComponent {
       subItems: [
         { label: 'Vadhu-Var-Suchika', route: '/products/vadhu-var-suchika' },
         { label: 'My Dream Property', route: '/products/my-dream-property' },
-        // { label: 'Be VibeStar', route: '/products/be-vibestar' }
       ]
     },
     { label: 'Services', route: '/services' },
-    { label: 'Careers', section: 'careers',route: '/careers' },
-    // { label: 'Trainings', section: 'training',
-    //   subItems: [
-    //     { label: 'Java', route: '/training/java' },
-    //     { label: 'MongoDb', route: '/training/MongoDB' },
-    //     { label: 'AWS', route: '/training/AWS' }
-    //   ]
-    //  },
+    { label: 'Careers', section: 'careers', route: '/careers' },
     { label: 'Contact Us', section: 'contact-us', route: '/contact-us' },
   ];
 
@@ -57,6 +49,10 @@ export class NavbarComponent {
       return item.subItems.some((sub: { route: string; }) => this.router.url.startsWith(sub.route));
     }
     return false;
+  }
+
+  isDropdownActive(item: any): boolean {
+    return this.dropdownStates[item.label] || this.isItemActive(item);
   }
 
   toggleDropdown(label: string, event: Event) {
@@ -70,5 +66,16 @@ export class NavbarComponent {
 
   closeDropdown(label: string) {
     this.dropdownStates[label] = false;
+  }
+
+  markAsActive(item: any, sub: any) {
+    this.activeItem = item;
+    this.activeSubItem = sub;
+    this.router.navigate([sub.route]);
+  }
+
+  isSubItemActive(item: any): boolean {
+    // Check if any of the sub-items is active
+    return item.subItems?.some((sub: { route: string }) => this.router.url.startsWith(sub.route));
   }
 }

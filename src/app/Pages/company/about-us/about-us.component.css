@@ -56,11 +56,3 @@
 ::ng-deep .p-carousel-next {
   display: none !important;
 }
-
-
-/* Smooth and slow transition between carousel items */
-::ng-deep .p-carousel-items-content {
-  /* transition: transform 1s ease-in-out !important; */
-  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1) !important;
-
-}
