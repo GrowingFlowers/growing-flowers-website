@@ -1,7 +1,7 @@
 /* Gradient Background */
 /* Gradient Background */
-.bg-gradient-green {
-  background: linear-gradient(to bottom right, #ffffff, #e6f4ea, #c6f2d1);
+.bg-gradient-blue {
+  background: linear-gradient(to bottom right, #ffffff, #e6f0fa, #c6d9f2);
 }
 
 /* Card Hover */

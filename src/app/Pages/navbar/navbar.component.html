@@ -1,24 +1,32 @@
 <nav class="w-full z-5 shadow-1" style="position: sticky; top: 0;">
+  <!-- Navbar Content -->
   <div class="navbar flex align-items-center justify-content-between px-4 py-2 gradient-white-6">
+
     <!-- Logo -->
     <a routerLink="/home">
       <img src="../../../assets/Logo/try/logo_90_B.png" alt="Logo" class="h-6rem w-6rem object-contain" />
     </a>
 
-    <!-- Mobile Toggle Button -->
+    <!-- Mobile Toggle Button for Sidebar (Responsive) -->
     <button pButton icon="pi pi-bars" class="lg:hidden m-4 ml-auto" (click)="sidebarVisible = true"></button>
 
-    <!-- Mobile Sidebar -->
+    <!-- Mobile Sidebar (Visible when dropdown is active) -->
     <p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="10000" position="right" [style]="{ width: '250px' }"
       styleClass="custom-sidebar gradient-white-6">
       <ul class="list-none p-0 m-0">
         <li *ngFor="let item of items" class="mb-3 text-xl font-bold mx-3">
+          <!-- Check if the item has sub-items for dropdown -->
           <ng-container *ngIf="item.subItems; else simpleMobileLink">
             <div class="flex justify-content-between align-items-center cursor-pointer"
               (click)="toggleDropdown(item.label, $event)">
-              <span [ngClass]="{'active-dropdown': isDropdownActive(item)}">{{ item.label }}</span>
+              <!-- Show dropdown label and toggle icon -->
+              <span [ngClass]="{
+                'active-dropdown': isDropdownActive(item),  
+                'text-green': isItemActive(item)
+              }">{{ item.label }}</span>
               <i class="pi" [ngClass]="dropdownStates[item.label] ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
             </div>
+            <!-- Render subitems when dropdown is open -->
             <ul *ngIf="dropdownStates[item.label]" class="pl-3 mt-2">
               <li *ngFor="let sub of item.subItems" class="list-none mb-2 text-lg">
                 <a [routerLink]="sub.route" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
@@ -28,6 +36,7 @@
               </li>
             </ul>
           </ng-container>
+          <!-- Simple links without dropdowns -->
           <ng-template #simpleMobileLink>
             <a *ngIf="item.route" [routerLink]="item.route" routerLinkActive="active-link"
               [routerLinkActiveOptions]="{ exact: true }" class="no-underline" (click)="sidebarVisible = false">
@@ -38,32 +47,58 @@
       </ul>
     </p-sidebar>
 
-    <!-- Desktop Navigation -->
+    <!-- Desktop Navigation Menu -->
     <div class="hidden lg:flex align-items-center custom-navbar">
       <ul class="flex text-black-alpha-90 list-none m-0">
         <li *ngFor="let item of items" class="relative mx-5 font-bold text-2xl group">
+          <!-- Dropdown with subitems -->
           <ng-container *ngIf="item.subItems; else simpleDesktopLink">
-            <div class="flex align-items-center cursor-pointer relative" (mouseenter)="openDropdown(item.label)"
-              (mouseleave)="closeDropdown(item.label)">
+            <div class="flex align-items-center cursor-pointer relative"
+              (mouseenter)="openDropdown(item.label); onDropdownHoverStart()"
+              (mouseleave)="closeDropdown(item.label); onDropdownHoverEnd()"> <!-- Hover to close -->
               <span [ngClass]="{
-                    'active-dropdown': isDropdownActive(item),
-                    'active-dropdown-title': isSubItemActive(item)
-                  }">
+                'active-dropdown': isDropdownActive(item), 
+                'active-dropdown-title': isSubItemActive(item),
+                'text-green': isItemActive(item)  
+              }">
                 {{ item.label }}
               </span>
               <i class="pi pi-chevron-down ml-2"></i>
+
+              <!-- Dropdown Content -->
               <ul *ngIf="dropdownStates[item.label]"
-                class="absolute top-100 left-0 surface-overlay shadow-2 border-round p-2 w-15rem z-5 custom-dropdown"
-                (mouseenter)="openDropdown(item.label)" (mouseleave)="closeDropdown(item.label)">
-                <li *ngFor="let sub of item.subItems" class="list-none py-2 px-3 text-lg">
-                  <a [routerLink]="sub.route" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-                    class="no-underline custom-dropdown" (click)="markAsActive(item, sub)">
-                    {{ sub.label }}
-                  </a>
-                </li>
+                class="absolute top-100 left-0 border-round py-5 w-auto z-5 custom-dropdown"
+                (mouseenter)="onDropdownHoverStart()" (mouseleave)="onDropdownHoverEnd()">
+                <div class="flex">
+                  <div *ngFor="let sub of item.subItems"
+                    class="flex flex-column px-3 py-5 border-round text-lg custom-subitem border-1 mx-2">
+                    <!-- Products Section with Tooltip -->
+                    <ng-container *ngIf="item.label === 'Products'">
+                      <a [routerLink]="sub.route" routerLinkActive="active-link"
+                        [routerLinkActiveOptions]="{ exact: true }" class="no-underline custom-dropdown"
+                        (click)="markAsActive(item, sub)" *ngIf="sub.tooltip_desc" pTooltip="{{ sub.tooltip_desc }}"
+                        tooltipPosition="left">
+                        <h4 class="text-center dropdown-text">{{ sub.label }}</h4>
+                        <p class="text-center dropdown-text">{{ sub.description }}</p>
+                      </a>
+                    </ng-container>
+
+                    <!-- Company Section without Tooltip -->
+                    <ng-container *ngIf="item.label !== 'Products'">
+                      <a [routerLink]="sub.route" routerLinkActive="active-link"
+                        [routerLinkActiveOptions]="{ exact: true }" class="no-underline custom-dropdown"
+                        (click)="markAsActive(item, sub)">
+                        <h4 class="text-center dropdown-text">{{ sub.label }}</h4>
+                        <p class="text-center dropdown-text">{{ sub.description }}</p>
+                      </a>
+                    </ng-container>
+                  </div>
+                </div>
               </ul>
             </div>
           </ng-container>
+
+          <!-- Simple Desktop Links without Dropdowns -->
           <ng-template #simpleDesktopLink>
             <a *ngIf="item.route" [routerLink]="item.route" routerLinkActive="active-link"
               [routerLinkActiveOptions]="{ exact: true }" class="no-underline">
@@ -73,5 +108,9 @@
         </li>
       </ul>
     </div>
+
   </div>
+
+  <!-- Blur Overlay for dropdown hover effect -->
+  <div class="blur-overlay" [class.active]="isDropdownHovered"></div>
 </nav>

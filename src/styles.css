@@ -49,6 +49,16 @@ a {
   -o-transition: all 0.2s ease-in-out;
 }
 
+p{
+  font-family:"Helvetica Neue",Georgia,sans-serif;
+  font-size: 1rem;
+}
+
+li, ul{
+  font-family:"Helvetica Neue",Georgia,sans-serif;
+  font-size: 1.1rem;
+}
+
 /* Buttons (optional refinement) */
 button, .p-button {
   font-family: 'Inter', sans-serif;

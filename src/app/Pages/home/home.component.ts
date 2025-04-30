@@ -3,13 +3,11 @@ import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { GalleriaModule } from 'primeng/galleria';
-import { NavbarComponent } from "../navbar/navbar.component";
-import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, CarouselModule, RouterModule, GalleriaModule, NavbarComponent, FooterComponent],
+  imports: [ButtonModule, CarouselModule, RouterModule, GalleriaModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   // Fixes issue where the carousel splits into two rows and displays different images when autoplay is enabled
@@ -22,7 +20,7 @@ export class HomeComponent {
       title: 'Vadhu Var Suchika',
       image: '../../../../assets/products/vadhu-var-suchika.jpg',
       description: `Find your perfect match with verified profiles and smart matchmaking. 
-      Bridging tradition and trust for a secure matrimony experience.`,
+      Bridging tradition and trust for a secure matrimony experience. `,
       route: '/products/vadhu-var-suchika',
       badge: 'New',
     },

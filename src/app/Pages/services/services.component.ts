@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule],
+  imports: [CommonModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })

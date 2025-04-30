@@ -120,3 +120,17 @@
     margin: 20px auto;
   }
 }
+
+#contact-us {
+  background-image: url('https://t4.ftcdn.net/jpg/05/04/78/25/360_F_504782581_LHwsDbXlrFiiadWC4i15yV2lhbJnB8g0.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#careers {
+  background-image: url('https://img.freepik.com/premium-photo/teamwork-unity-concept-organization-structure-team-building-recruitment-business-management-human-resources-concepts-cooperation-teamwork-business-training-concept_256259-5763.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+ 

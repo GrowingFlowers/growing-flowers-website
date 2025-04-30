@@ -1,73 +1,124 @@
-/* Active green text and underline */
+/* Active Link - Green Highlight */
 .active-link {
-  color: #06a70e !important;
-  font-weight: bold;
-  border-bottom: 2px solid #06a70e !important;
+  color: #06a70e !important; /* Green color for active links */
+  font-weight: bold; /* Bold text for active links */
+  border-bottom: 2px solid #06a70e !important; /* Green bottom border */
 }
 
-/* Remove hover effect from nav-link and dropdown title */
+/* No hover color change for nav links */
 .nav-link:hover,
 .active-dropdown:hover {
-  color: inherit !important;
-  /* Prevent any hover color change */
-  background-color: inherit !important;
-  /* Prevent background color change */
+  color: inherit !important; /* Prevent color change on hover */
+  background-color: inherit !important; /* Keep background transparent on hover */
 }
 
-/* Ensure light theme */
+/* Light Theme Styling */
 ::ng-deep .custom-navbar,
 ::ng-deep .custom-navbar * {
-  background-color: transparent !important;
-  color: #000 !important;
+  background-color: transparent !important; /* Transparent background for navbar */
+  color: #000 !important; /* Text color: black */
 }
 
 ::ng-deep .custom-dropdown,
 ::ng-deep .custom-dropdown * {
-  background-color: #f9fafb !important;
-  color: #000 !important;
+  background-color: transparent!important; /* Transparent background for dropdown */
+  color: #000 !important; /* Text color: black for dropdown */
 }
 
-/* Ensure light theme */
 ::ng-deep .custom-sidebar,
 ::ng-deep .custom-sidebar * {
-  background-color: #f9fafb !important;
-  color: #000 !important;
+  background-color: #f9fafb !important; /* Light background for sidebar */
+  color: #000 !important; /* Text color: black for sidebar */
 }
 
-/* Green Mint Mist */
+/* Navbar Gradient */
 .gradient-white-6 {
-  background: linear-gradient(135deg, #ffffff, #9ae6b4);
+  background: linear-gradient(135deg, #ffffff, #9ae6b4); /* Gradient background */
 }
 
-/* Highlight dropdown item when active */
+/* Dropdown Item Active */
 .active-dropdown {
-  color: #06a70e !important;
-  font-weight: bold;
+  color: #06a70e !important; /* Green color for active dropdown items */
+  font-weight: bold; /* Bold text for active dropdown items */
 }
 
-/* Highlight dropdown title when active */
-.navbar .group>.flex>span.active-dropdown-title {
-  color: #06a70e !important;
-  font-weight: bold;
+/* Dropdown Title Active */
+.navbar .group > .flex > span.active-dropdown-title {
+  color: #06a70e !important; /* Green color for active dropdown titles */
+  font-weight: bold; /* Bold text for active dropdown titles */
 }
 
-/* Disable dropdown title hover color change */
-.navbar .group>.flex>span {
-  color: inherit !important;
+/* Disable hover effect on dropdown titles */
+.navbar .group > .flex > .dropdown-text {
+  color: #06a70e !important; /* Green color for dropdown text */
 }
 
-.navbar .group>.flex>span:hover {
-  color: inherit !important;
-  background-color: inherit !important;
+.navbar .group > .flex > .dropdown-text:hover {
+  color: #06a70e !important; /* Green color when hovering dropdown text */
+  background-color: inherit !important; /* Keep background transparent */
 }
 
-/* Highlight dropdown title when its sub-items are active */
-.active-dropdown-title {
-  color: #06a70e !important;
-  font-weight: bold;
+/* Highlight Dropdown Icon */
+.navbar .group > .flex > i.pi-chevron-down {
+  color: #06a70e !important; /* Green color for dropdown icon */
 }
 
-/* Adjusting styles for active dropdown icon */
-.navbar .group>.flex>i.pi-chevron-down {
-  color: #06a70e !important;
+/* Desktop Dropdown Layout */
+.custom-dropdown {
+  display: flex;
+  flex-direction: column; /* Stack subitems vertically */
+  min-width: 250px; /* Minimum width for dropdown */
+  max-width: 950px; /* Maximum width for dropdown */
+}
+
+/* Subitems in Dropdown */
+.custom-subitem {
+  padding: 1rem; /* Padding inside each dropdown item */
+  margin-bottom: 1rem; /* Margin between dropdown items */
+  background-color: #CCF3D9!important; /* Light green background for subitems */
+}
+
+.custom-subitem:hover {
+  background-color: transparent; /* Transparent background when hovering on subitem */
+}
+
+/* Subitem Text */
+.custom-subitem h4 {
+  color: #333; /* Dark text color for subitem title */
+  font-weight: bold; /* Bold title for subitem */
+  margin-bottom: 8px; /* Margin at the bottom of title */
+}
+
+.custom-subitem p {
+  color: #666; /* Lighter text color for subitem description */
+  font-size: 0.875rem; /* Smaller font size for subitem description */
+}
+
+/* Blur Overlay - ONLY outside Navbar */
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); /* Apply blur effect */
+  background: rgba(0, 0, 0, 0.2); /* Dark background behind blurred overlay */
+  pointer-events: none; /* Don't block mouse events */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  z-index: 1; /* Place it behind the Navbar */
+}
+
+/* Activate Blur Overlay */
+.blur-overlay.active {
+  opacity: 1; /* Show the overlay when dropdown is hovered */
+}
+
+/* Tooltip Styling */
+::ng-deep .p-tooltip-text {
+  background-color: #06a70e !important; /* Green background for tooltip */
+  color: white; /* White text color for tooltip */
+  border: none; /* Remove border from tooltip */
+  padding: 8px 12px; /* Add padding to tooltip */
+  border-radius: 6px; /* Rounded corners for tooltip */
 }

@@ -1,51 +1,145 @@
-<app-navbar></app-navbar>
-
 <!-- Rose Gradient Background -->
-<div class="bg-gradient-rose px-2 pt-4 pb-6">
+<div class="bg-gradient-rose px-2 sm:px-4 pt-6 pb-8">
+  <div class="flex justify-content-center">
+    <p-card
+      class="hoverable-card w-full sm:w-11 md:w-10 surface-card shadow-4 border-round-2xl p-4 md:p-5 transition-transform duration-300 transform hover:scale-105 hover:shadow-6">
 
-  <div class="flex justify-content-center px-2">
-    <p-card class="hoverable-card w-full sm:w-11 md:w-10 lg:w-7 xl:w-6 surface-card shadow-4 border-round-2xl p-4 md:p-5 product-card-detail">
-
-      <!-- Title & Meta -->
-      <div class="text-center mb-3">
-        <h1 class="text-3xl md:text-4xl font-bold text-pink-600 mb-1">Vadhu Var Suchika</h1>
+      <!-- Title -->
+      <div class="text-center mb-4">
+        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-pink-600">Vadhu Var Suchika</h1>
       </div>
 
       <!-- Tag Icon -->
       <div class="flex justify-content-center mb-3">
-        <span class="py-1 px-3 text-sm font-semibold border-round-full bg-pink-50 text-pink-700 shadow-1">
+        <span class="py-1 px-3 text-xs sm:text-sm font-semibold border-round-full bg-pink-50 text-pink-700 shadow-1">
           💍 Matrimony
         </span>
       </div>
 
-      <!-- Image -->
-      <div class="flex justify-content-center my-3">
-        <img src="../../../../assets/products/vadhu-var-suchika.jpg"
-             alt="Vadhu-Var-Suchika"
-             class="w-full md:w-10 border-round-xl shadow-2 object-contain border p-2" />
+      <!-- Main Logo -->
+      <div class="flex justify-content-center mb-4">
+        <img src="../../../../assets/products/vadhu-var-suchika.jpg" alt="Vadhu-Var-Suchika"
+          class="w-18rem sm:w-24rem md:w-30rem lg:w-36rem xl:w-44rem border-round-xl shadow-2 object-contain border p-2 m-0" />
       </div>
 
-      <!-- Website Link -->
-      <div class="text-center my-4">
-        <a href="https://vadhu-var-suchika.com/"
-           target="_blank"
-           class="inline-block py-2 px-4 border-round-2xl bg-green-100 text-green-700 font-semibold text-lg hover:bg-green-200 transition-all">
-          🌐 vadhu-var-suchika.com
-        </a>
-      </div>
-
-      <!-- Description -->
-      <div class="my-4">
-        <p class="text-base md:text-lg text-justify text-color leading-relaxed">
-          When it's time to look for a life partner, everybody becomes serious, and sometimes not getting more profiles 
-          becomes frustrating. Here we come up with an application with more than
-          <b class="text-pink-600">5000 verified, trusted, and well-qualified</b>
-          profiles of brides & grooms. Now, find your life partner with a single customized search.
+      <!-- Welcome Section -->
+      <div class="mb-5">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center text-pink-600 mb-3">
+          💖 Vadhu Var Suchika – Where Hearts Meet, and New Journeys Begin
+        </h2>
+        <p class="text-sm sm:text-base md:text-lg text-justify text-color leading-relaxed">
+          Vadhu-Var-Suchika is a heartfelt matrimony platform developed by Growing Flowers Software Solution, bringing
+          together technology and tradition to help you find a life partner who resonates with your values, dreams, and
+          culture. We don’t just facilitate matchmaking — we help craft meaningful beginnings with care, warmth, and
+          dignity.
         </p>
       </div>
 
+      <!-- Core Offerings Section -->
+      <div class="flex flex-column md:flex-row gap-4 items-start mb-5">
+        <!-- Image -->
+        <div class="w-full md:w-6 md:order-2 mt-3">
+          <img src="../../../../assets/VVS_Our_Heartfelt_Offerring.jpg" alt="Offerings"
+            class="w-full border-round shadow-2 m-0" />
+        </div>
+
+        <!-- Text -->
+        <div class="w-full md:w-6 md:order-1 mt-3">
+          <h3 class="text-base sm:text-lg md:text-xl font-semibold text-pink-600 mb-2">🌸 Our Heartfelt Offerings</h3>
+          <ul class="list-none text-sm sm:text-base md:text-lg text-justify text-color leading-relaxed space-y-2">
+            <li>
+              <b>💑 Thousands of Dreams, One True Match</b><br>
+              Authentic profiles of brides and grooms with shared values.
+            </li>
+            <li>
+              <b>🔍 Personalized Search Filters</b><br>
+              Filter by lifestyle, ambition, beliefs, and more.
+            </li>
+            <!-- <li>
+              <b>📝 Favorites List</b><br>
+              Bookmark profiles and share with family.
+            </li> -->
+            <li>
+              <b>🏡 Wedding Essentials & Home Setup</b><br>
+              Discover curated wedding and home products.
+            </li>
+            <!-- <li>
+              <b>🔁 Flexible Membership Plans</b><br>
+              6-month plans to suit your pace.
+            </li> -->
+            <li>
+              <b>🔔 Match Alerts</b><br>
+              Notifications about new matches and updates.
+            </li>
+            <li>
+              <b>📞 Caring Customer Support</b><br>
+              Available via call, chat, and email.
+            </li>
+            <!-- <li>
+              <b>👤 Profile Control</b><br>
+              Update your story as life evolves.
+            </li> -->
+            <li>
+              <b>🤖 Smart Matchmaking</b><br>
+              AI-assisted suggestions aligned with your preferences.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Why Choose Us Section -->
+      <div class="flex flex-column md:flex-row gap-4 items-start mb-5">
+        <!-- Text -->
+        <div class="w-full md:w-6 mt-4">
+          <h3 class="text-base sm:text-lg md:text-xl font-semibold text-pink-600 mb-2">💡 Why Choose Vadhu-Var-Suchika?
+          </h3>
+          <ul class="list-none text-sm sm:text-base md:text-lg text-justify text-color leading-relaxed space-y-2">
+            <li class="mb-2"><span class="font-bold">🌹 We Understand Emotions – </span>Where tradition meets heart.
+            </li>
+            <li class="mb-2"><span class="font-bold">🧠 Emotion-Aware Tech –</span> Smart but sensitive matchmaking.
+            </li>
+            <li class="mb-2"><span class="font-bold">🏡 Start to Home –</span> Everything for the journey after "yes".
+            </li>
+            <li class="mb-2"><span class="font-bold">🌐 Pan-India & Cross-Culture –</span> Bridging hearts across
+              regions.</li>
+            <li class="mb-2"><span class="font-bold">🔒 Trust & Safety First –</span> Every profile verified, every step
+              secure.</li>
+            <li class="mb-2"><span class="font-bold">💬 Real Conversations –</span> Say goodbye to bots, hello to
+              genuine dialogue.</li>
+            <li class="mb-2"><span class="font-bold">🎯 Personalized Matches –</span> Crafted connections that truly
+              resonate.</li>
+          </ul>
+        </div>
+
+        <!-- Image -->
+        <div class="w-full md:w-6 mt-4">
+          <img src="../../../../assets/VVS_Why_Us.jpg" alt="Why Choose Us" class="w-full border-round shadow-2 m-0" />
+        </div>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="text-sm sm:text-base md:text-lg text-justify text-color leading-relaxed mt-4">
+
+        <p class="mb-2"><span>📲 <strong class="text-pink-600">Begin Your Journey of Togetherness Today!</strong></span>
+        </p>
+        <p class="mb-3">Whether you're seeking a soulmate, building a home, or planning the next big step — Vadhu Var
+          Suchika is your trusted companion in every heartfelt decision.</p>
+      </div>
+
+      <div class="flex flex-column md:flex-row gap-4">
+        <!-- Website Link -->
+        <a href="https://vadhu-var-suchika.com/" target="_blank"
+          class="flex-1 text-center py-3 px-4 border-round-xl bg-blue-100 text-blue-800 font-semibold text-sm sm:text-base shadow-2 hover:bg-blue-200 transition-all">
+          <p>🌐 Visit Website</p>
+        </a>
+
+        <!-- Android App Link -->
+        <a href="https://play.google.com/store/apps/details?id=com.vadhuvarsuchika" target="_blank"
+          class="flex-1 text-center py-3 px-4 border-round-xl bg-green-100 text-green-800 font-semibold text-sm sm:text-base shadow-2 hover:bg-green-200 transition-all">
+          <p>📱 Get Android App</p>
+        </a>
+      </div>
+      
     </p-card>
   </div>
 </div>
-
-<app-footer></app-footer>

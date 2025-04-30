@@ -6,13 +6,11 @@ import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { DialogModule } from 'primeng/dialog';
 import { AccordionModule } from 'primeng/accordion';
-import { NavbarComponent } from '../../navbar/navbar.component';
-import { FooterComponent } from '../../footer/footer.component';
 
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, CardModule, CommonModule, RouterModule, ButtonModule, CarouselModule, DialogModule, AccordionModule],
+  imports: [CardModule, CommonModule, RouterModule, ButtonModule, CarouselModule, DialogModule, AccordionModule],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css',
   // Fixes issue where the carousel splits into two rows and displays different images when autoplay is enabled

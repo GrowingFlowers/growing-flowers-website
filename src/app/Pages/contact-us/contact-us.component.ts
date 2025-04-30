@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FooterComponent } from '../footer/footer.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
 import { ButtonModule } from 'primeng/button';
@@ -14,8 +12,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-contact-us',
   standalone: true,
   imports: [
-    NavbarComponent,
-    FooterComponent,
     ReactiveFormsModule,
     InputTextModule,
     TextareaModule,

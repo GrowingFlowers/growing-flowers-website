@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from "../navbar/navbar.component";
-import { FooterComponent } from "../footer/footer.component";
 import { CardModule } from 'primeng/card';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
@@ -14,8 +12,6 @@ import { FileUploadModule } from 'primeng/fileupload';
   selector: 'app-career',
   standalone: true,
   imports: [
-    NavbarComponent,
-    FooterComponent,
     CardModule,
     CommonModule,
     ButtonModule,
