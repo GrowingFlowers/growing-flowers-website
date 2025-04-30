@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
@@ -7,6 +7,8 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
+import { EmailService } from '../../Services/email.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-career',
@@ -21,10 +23,18 @@ import { FileUploadModule } from 'primeng/fileupload';
     FileUploadModule,
     ReactiveFormsModule,
   ],
+  providers: [MessageService],
   templateUrl: './career.component.html',
   styleUrl: './career.component.css'
 })
-export class CareerComponent {
+export class CareerComponent implements OnInit {
+
+  displayDialog = false;
+  applicationForm!: FormGroup;
+  jobOptions: { label: string; value: string }[] = [];
+  selectedJob: any;
+  resumeError: boolean = false;
+
   jobs = [
     {
       title: 'Software Intern (Fresher)',
@@ -70,19 +80,22 @@ export class CareerComponent {
     },
   ];
 
-  displayDialog = false;
-  applicationForm: FormGroup;
-  jobOptions: { label: string; value: string }[] = [];
-  selectedJob: any;
-  resumeError: boolean = false;
+  
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, 
+      private emailService: EmailService,
+      private messageService: MessageService
+  ) {
+   
+  }
+
+  ngOnInit(): void {
     this.applicationForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       position: ['', Validators.required],
-      resume: [null, Validators.required],
+      attachment: ['', Validators.required],
     });
   }
 
@@ -91,7 +104,7 @@ export class CareerComponent {
     this.jobOptions = this.jobs.map(j => ({ label: j.title, value: j.title }));
     this.applicationForm.patchValue({
       position: job.title,
-      resume: null,
+      attachment: null,
     });
     this.resumeError = false;
     this.displayDialog = true;
@@ -100,32 +113,44 @@ export class CareerComponent {
   onFileUpload(event: any) {
     const file = event.files[0];
     if (file) {
-      this.applicationForm.patchValue({ resume: file });
+      this.applicationForm.patchValue({ attachment: file });
       this.resumeError = false;
     }
   }
 
   submitApplication() {
-    if (!this.applicationForm.value.resume) {
+
+    const attachment = this.applicationForm.value.attachment;
+
+    if (!this.applicationForm.value.attachment) {
       this.resumeError = true;
     }
 
+    debugger;
     if (this.applicationForm.valid && !this.resumeError) {
-      const { name, email, phone, position } = this.applicationForm.value;
+    //   debugger;
 
-      const subject = `Application for ${position}`;
-      const body =
-        `Name: ${name}%0D%0A` +
-        `Email: ${email}%0D%0A` +
-        `Phone: ${phone}%0D%0A` +
-        `Position: ${position}%0D%0A%0D%0A` +
-        `Note: Resume attached separately (upload not supported via mailto).`;
+    //   const { attachment, ...payload } = this.applicationForm.value;
 
-      const mailtoLink = `mailto:divyesh@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoLink;
+    // console.log('Payload without attachment:', payload);
 
-      this.displayDialog = false;
-      this.applicationForm.reset();
+    const formData = new FormData();
+
+    // Append form fields
+    formData.append('name', this.applicationForm.value.name);
+    formData.append('email', this.applicationForm.value.email);
+    formData.append('phone', this.applicationForm.value.phone);
+    formData.append('position', this.applicationForm.value.position);
+    // Append the file
+    formData.append('attachment', attachment);
+
+      this.emailService.submitCareer(formData).subscribe((data:any) => {
+        console.log('EMail Data: ', data);
+        if (data.success) {
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Leave request saved successfully.' });
+          this.displayDialog = false;
+        }
+      })
     } else {
       this.applicationForm.markAllAsTouched();
     }

@@ -90,19 +90,19 @@
       <!-- Resume Upload -->
       <div class="field col-12">
         <label for="resume">Upload Resume</label>
-        <p-fileUpload name="resume" customUpload="true" (uploadHandler)="onFileUpload($event)" chooseLabel="Choose"
+        <p-fileUpload name="attachment" customUpload="true" (uploadHandler)="onFileUpload($event)" chooseLabel="Choose"
           uploadLabel="Upload" [auto]="true">
         </p-fileUpload>
         <small *ngIf="resumeError" class="text-red-500">Please upload your resume</small>
  
         <!-- Resume Preview -->
-        <ng-container *ngIf="applicationForm.value.resume">
+        <ng-container *ngIf="applicationForm.value.attachment">
           <div class="mt-2 text-sm text-gray-700">
             <i class="pi pi-file mr-2"></i>
-            <b>{{ applicationForm.value.resume.name }}</b> —
-            {{ (applicationForm.value.resume.size / 1024 / 1024) > 1
-            ? (applicationForm.value.resume.size / 1024 / 1024).toFixed(2) + ' MB'
-            : (applicationForm.value.resume.size / 1024).toFixed(2) + ' KB' }}
+            <b>{{ applicationForm.value.attachment.name }}</b> —
+            {{ (applicationForm.value.attachment.size / 1024 / 1024) > 1
+            ? (applicationForm.value.attachment.size / 1024 / 1024).toFixed(2) + ' MB'
+            : (applicationForm.value.attachment.size / 1024).toFixed(2) + ' KB' }}
           </div>
         </ng-container>
       </div>
@@ -110,7 +110,7 @@
       <!-- Submit Button -->
       <div class="col-12 text-left mt-2">
         <button pButton type="submit" label="Submit" icon="pi pi-check"
-          [disabled]="applicationForm.invalid || !applicationForm.value.resume"
+          [disabled]="applicationForm.invalid || !applicationForm.value.attachment"
           class="p-button-success text-white"></button>
       </div>
     </div>
