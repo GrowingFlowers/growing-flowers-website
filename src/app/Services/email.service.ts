@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
 
-  apiUrl: string = "http://localhost:8445";
+  apiUrl: any = environment.apiUrl;
 
   headers = new HttpHeaders({
     'Content-Type': 'multipart/form-data'
