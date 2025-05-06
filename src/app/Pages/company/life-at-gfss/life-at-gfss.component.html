@@ -22,8 +22,8 @@
         </ng-template>
         
         <div class="grid mt-2">
-          <div class="col-12 md:col-4" *ngFor="let photo of photos">
-            <img [src]="photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
+          <div class="col-12 md:col-4" *ngFor="let photo of team_photos">
+            <img [src]="'assets/' + photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
           </div>
         </div>
       </p-accordionTab>
@@ -40,8 +40,8 @@
           </div>
         </ng-template>
         <div class="grid mt-2">
-          <div class="col-12 md:col-4" *ngFor="let photo of photos">
-            <img [src]="photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
+          <div class="col-12 md:col-4" *ngFor="let photo of sports_photos">
+            <img [src]="'assets/' + photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
           </div>
         </div>
       </p-accordionTab>
@@ -58,14 +58,12 @@
           </div>
         </ng-template>
         <div class="grid mt-2">
-          <div class="col-12 md:col-4" *ngFor="let photo of photos">
-            <img [src]="photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
+          <div class="col-12 md:col-4" *ngFor="let photo of office_photos">
+            <img [src]="'assets/' + photo.url" [alt]="photo.alt" class="about-img w-full border-round shadow-2" />
           </div>
         </div>
       </p-accordionTab>
   
     </p-accordion>
   </div>
-  
-
 </section>

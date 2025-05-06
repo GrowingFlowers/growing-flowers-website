@@ -60,6 +60,7 @@
     <ng-template pTemplate="item" let-member>
       <p-card class="team-card p-4 text-center border-round-xl">
         <div class="w-full h-full flex flex-column justify-between align-items-center">
+          
           <img [src]="member.photo" alt="{{ member.name }}" class="w-13rem h-13rem border-circle object-cover" />
 
           <div class="mt-1">
@@ -80,14 +81,7 @@
   <p-dialog header="{{ selectedMember?.name }}" [(visible)]="displayProfileDialog" [modal]="true"
     [style]="{ width: '400px' }" [closable]="true" [dismissableMask]="true" class="p-fluid border-round-xl">
     <ng-container *ngIf="selectedMember">
-      <p class="text-base md:text-lg text-color text-left">{{ selectedMember.bio}}</p> <br>
-      <p class="text-base md:text-lg text-color text-left">
-        <span class="text-base md:text-lg font-bold">Email: </span>
-        <a [href]="'mailto:' + selectedMember.mail" class="text-primary underline hover:text-primary-700">
-          {{ selectedMember.mail }}
-        </a>
-      </p>
-
+      <p class="text-base md:text-lg text-color text-left">{{ selectedMember.bio}}</p>
     </ng-container>
   </p-dialog>
 </div>
