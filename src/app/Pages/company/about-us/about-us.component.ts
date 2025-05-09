@@ -31,7 +31,7 @@ export class AboutUsComponent {
       name: 'Neha Shirude',
       role: 'Co-CEO & Co-Founder',
       bio: 'Frontend expert who turns ideas into smooth digital experiences.Frontend expert who turns ideas into smooth digital experiences.Frontend expert who turns ideas into smooth digital experiences.Frontend expert who turns ideas into smooth digital experiences.Frontend expert who turns ideas into smooth digital experiences.Frontend expert who turns ideas into smooth digital experiences.Frontend expert who turns ideas into smooth digital experiences.',
-      photo: 'https://i.pravatar.cc/150?img=12',
+      photo: '../../../../assets/Team-Lead/Neha_Shirude.jpg',
     },
     {
       name: 'Ashwini Patil',
