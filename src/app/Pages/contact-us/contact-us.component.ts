@@ -61,7 +61,7 @@ export class ContactUsComponent {
       const mailSubject = encodeURIComponent(subject);
       const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
       
-      window.location.href = `mailto:divyeshgawad130@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+      window.location.href = `mailto:contactus@growingflowers-solutions.com?subject=${mailSubject}&body=${mailBody}`;
   
       this.messageService.add({
         severity: 'success',
