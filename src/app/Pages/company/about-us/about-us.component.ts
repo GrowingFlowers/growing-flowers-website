@@ -85,7 +85,7 @@ export class AboutUsComponent {
       name: 'Divyesh Gawad',
       role: 'Software Developer',
       bio: 'As a full-stack developer with a focus on Angular and Java, I build end-to-end solutions that are robust, user-friendly, and aligned with modern development standards. My experience spans UI design, API integration, and backend logic, allowing me to contribute across the entire development lifecycle. I’m committed to writing clean, maintainable code and continuously improving through hands-on problem solving and collaboration.',
-      photo: '../../../../assets/Team-Lead/divyesh.jpg',
+      photo: '../../../../assets/Team-Lead/divyesh.png',
     },
     {
       name: 'Rushikesh Gaikwad',

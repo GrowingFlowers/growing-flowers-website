@@ -35,7 +35,7 @@
             <div class="field col-12 md:col-6">
               <label for="name" class="block font-semibold text-black-alpha-90 mb-1">Name</label>
               <input id="name" type="text" formControlName="name"
-                class="text-base p-2 border-1 border-solid bg-white border-round w-full outline-none focus:border-primary"
+                class="text-base p-2 border-1 border-solid bg-white border-round w-full outline-none focus:border-primary text-black-alpha-90"
                 [ngClass]="{'p-invalid': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}" />
               <small *ngIf="contactForm.get('name')?.hasError('required') && contactForm.get('name')?.touched"
                 class="p-error">Name is required.</small>
@@ -98,5 +98,5 @@
     </div>
   </div>
   
-  <p-toast></p-toast>
+  <p-toast position="top-center"></p-toast>
 </section>
