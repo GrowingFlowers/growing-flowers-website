@@ -56,3 +56,16 @@
 ::ng-deep .p-carousel-next {
   display: none !important;
 }
+
+
+@media screen and (max-width: 320px) {
+  .team-card {
+    width: 90% !important; /* make card narrower on very small screens */
+    margin: 0 auto;
+  }
+  
+  .w-13rem {
+    width: 10rem !important; /* shrink the image width */
+    height: 10rem !important; /* shrink the image height */
+  }
+}

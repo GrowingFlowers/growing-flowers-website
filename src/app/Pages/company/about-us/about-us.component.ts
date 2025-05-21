@@ -96,18 +96,23 @@ export class AboutUsComponent {
 
   ];
 
-  carouselResponsiveOptions = [
-    {
-      breakpoint: '1024px',
-      numVisible: 2,
-      numScroll: 1
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 1,
-      numScroll: 1
-    }
-  ];
+carouselResponsiveOptions = [
+  {
+    breakpoint: '1024px',
+    numVisible: 2,
+    numScroll: 1
+  },
+  {
+    breakpoint: '768px',
+    numVisible: 1,
+    numScroll: 1
+  },
+  {
+    breakpoint: '320px',
+    numVisible: 1,
+    numScroll: 1
+  }
+];
 
   openProfileDialog(member: any) {
     this.selectedMember = member;

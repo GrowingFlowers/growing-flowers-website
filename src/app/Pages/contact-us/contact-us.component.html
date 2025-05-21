@@ -63,6 +63,8 @@
                 [ngClass]="{'p-invalid': contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched}" />
               <small *ngIf="contactForm.get('phone')?.hasError('required') && contactForm.get('phone')?.touched"
                 class="p-error">Contact number is required.</small>
+                <small *ngIf="contactForm.get('phone')?.hasError('pattern') && contactForm.get('phone')?.touched"
+                class="p-error">Enter Valid Mobile Number.</small>
             </div>
   
             <!-- Subject -->
