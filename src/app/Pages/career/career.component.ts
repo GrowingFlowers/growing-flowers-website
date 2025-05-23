@@ -127,7 +127,7 @@ export class CareerComponent implements OnInit {
     }
 
     if (this.applicationForm.valid && !this.resumeError) {
-      
+
     const formData = new FormData();
 
     // Append form fields
@@ -139,7 +139,6 @@ export class CareerComponent implements OnInit {
     formData.append('attachment', attachment);
 
       this.emailService.submitCareer(formData).subscribe((data:any) => {
-        console.log('EMail Data: ', data);
         if (data.success) {
           this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Leave request saved successfully.' });
           this.displayDialog = false;
