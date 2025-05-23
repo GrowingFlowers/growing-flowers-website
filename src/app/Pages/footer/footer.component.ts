@@ -10,7 +10,6 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-// [x: string]: any;
-  
+
 
 }

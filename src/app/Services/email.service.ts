@@ -7,7 +7,8 @@ import { environment } from '../../environments/environment';
 })
 export class EmailService {
 
-  apiUrl: any = environment.apiUrl;
+  // apiUrl: any = environment.apiUrl;
+  apiUrl: any = 'https://43.204.206.181:8084';
 
   headers = new HttpHeaders({
     'Content-Type': 'multipart/form-data'

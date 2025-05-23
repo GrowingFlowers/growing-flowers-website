@@ -41,39 +41,4 @@ export class ServicesComponent {
       description: 'We build robust, scalable, and high-performance web applications using the latest technologies.'
     },
   ];
-
 }
-
-
-// services = [
-//   {
-//     icon: 'pi pi-desktop',
-//     title: 'Web Design',
-//     description: 'We design modern, responsive, and attractive web layouts that enhance user experience and engagement.'
-//   },
-//   {
-//     icon: 'pi pi-code',
-//     title: 'Web Development',
-//     description: 'We build robust, scalable, and high-performance web applications using the latest technologies.'
-//   },
-//   {
-//     icon: 'pi pi-cloud',
-//     title: 'Cloud Solutions',
-//     description: 'Deploy and manage your apps in the cloud with ease, ensuring availability, scalability, and security.'
-//   },
-//   {
-//     icon: 'pi pi-mobile',
-//     title: 'Mobile App Development',
-//     description: 'We create fast, user-friendly Android & iOS mobile apps that cater to your business needs.'
-//   },
-//   {
-//     icon: 'pi pi-chart-line',
-//     title: 'Digital Marketing',
-//     description: 'Grow your brand online through SEO, social media, and targeted digital advertising strategies.'
-//   },
-//   {
-//     icon: 'pi pi-cog',
-//     title: 'Custom Software Development',
-//     description: 'Tailored software solutions built to solve your unique business challenges efficiently.'
-//   }
-// ];

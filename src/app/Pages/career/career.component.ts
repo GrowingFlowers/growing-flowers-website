@@ -126,14 +126,8 @@ export class CareerComponent implements OnInit {
       this.resumeError = true;
     }
 
-    debugger;
     if (this.applicationForm.valid && !this.resumeError) {
-    //   debugger;
-
-    //   const { attachment, ...payload } = this.applicationForm.value;
-
-    // console.log('Payload without attachment:', payload);
-
+      
     const formData = new FormData();
 
     // Append form fields

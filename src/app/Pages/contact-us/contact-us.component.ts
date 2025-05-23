@@ -36,25 +36,7 @@ export class ContactUsComponent {
       message: ['', Validators.required]
     });
     
-  }
-
-  // basic frontend form
-  // onSubmit() {
-  //   if (this.contactForm.valid) {
-  //     console.log('Sending message to: rishikeskgaikwad243@gmail.com');
-  //     console.log(this.contactForm.value);
-
-  //     this.messageService.add({
-  //       severity: 'success',
-  //       summary: 'Message Sent',
-  //       detail: 'Your message has been sent successfully!',
-  //     });
-
-  //     this.contactForm.reset();
-  //   }
-  // }
-
-  // redirecting to gmail/outlook whichever is available on the system
+  }// redirecting to gmail/outlook whichever is available on the system
   onSubmit() {
     if (this.contactForm.valid) {
       const { name, email, phone, subject, message } = this.contactForm.value;
