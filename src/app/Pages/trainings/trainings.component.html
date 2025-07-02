@@ -1,0 +1,121 @@
+<div class="program-container">
+  <header class="header">
+    <div class="header-content">
+      <h1 class="program-title">Full Stack Engineer Certification</h1>
+      <p class="program-subtitle">Master In-Demand Technologies and Launch Your Tech Career</p>
+      <div class="eligibility">
+        <p>Exclusively for students of Diploma, BE, BTech, MCA, BCA, MCS, & BCS</p>
+      </div>
+      <p class="program-start-date">
+        <i class="pi pi-calendar-plus"></i>
+        Program Starts: <strong>4th August 2025</strong>
+      </p>
+    </div>
+  </header>
+
+  <div class="details-bar">
+    <div class="detail-item">
+      <i class="pi pi-spin pi-clock"></i>
+      <div>
+        <strong>Duration</strong>
+        <span>3 Months</span>
+      </div>
+    </div>
+    <div class="detail-item">
+      <i class="pi pi-globe"></i>
+      <div>
+        <strong>Mode</strong>
+        <span>Live Online (Google Meet)</span>
+      </div>
+    </div>
+    <div class="detail-item">
+      <i class="pi pi-hourglass"></i>
+      <div>
+        <strong>Daily Batches</strong>
+        <span>9am - 12:30pm | 4pm - 7:30pm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="info-column">
+      <section class="info-card">
+        <h2 class="section-title">Technologies You'll Master</h2>
+        <div class="tech-grid">
+          <div *ngFor="let tech of technologies" class="tech-item">
+            <i [class]="tech.icon + ' tech-icon'"></i>
+            <div class="tech-info">
+              <h3 class="tech-title">{{ tech.title }}</h3>
+              <p class="tech-details">{{ tech.details }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-card mt-4 ">
+        <h2 class="section-title">Key Features</h2>
+        <ul class="features-list">
+          <li *ngFor="let feature of features">
+            <i class="pi pi-check-circle"></i>
+            <span>{{ feature }}</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="registration-column">
+      <section class="registration-card">
+        <h2 class="section-title">Start Your Journey Now</h2>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+          <div class="p-fluid grid">
+            <div class="field col-12 md:col-6">
+              <label for="firstName">First Name</label>
+              <input pInputText  class="p-inputtext-sm input-width" formControlName="firstName" placeholder="e.g., John" />
+            </div>
+            <div class="field col-12 md:col-6">
+              <label for="lastName">Last Name</label>
+              <input pInputText id="lastName" class="p-inputtext-sm input-width" formControlName="lastName" placeholder="e.g., Doe" />
+            </div>
+            <div class="field col-12 md:col-6">
+              <label for="qualification">Qualification</label>
+              <input pInputText id="qualification" class="p-inputtext-sm input-width" formControlName="qualification" placeholder="e.g., B.E. CS" />
+            </div>
+            <div class="field col-12 md:col-6">
+              <label for="passOutYear">Pass Out Year</label>
+              <input pInputText id="passOutYear" type="number" class="p-inputtext-sm input-width" formControlName="passOutYear" placeholder="e.g., 2025" />
+            </div>
+            <div class="field col-12 md:col-6">
+              <label for="email">Email ID</label>
+              <input pInputText id="email" type="email" class="p-inputtext-sm input-width" formControlName="email" placeholder="you@example.com" />
+            </div>
+            <div class="field col-12 md:col-6">
+              <label for="mobile">Mobile Number</label>
+              <input pInputText id="mobile" type="tel" class="p-inputtext-sm input-width" formControlName="mobile" placeholder="10-digit Mobile Number" />
+            </div>
+            <div class="field col-12 md:col-6">
+              <label for="location">Location</label>
+              <input pInputText id="location" class="p-inputtext-sm input-width" formControlName="location" placeholder="Your City" />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label for="gender">Gender</label>
+                <p-dropdown class="input-width" inputId="gender" [options]="genders" formControlName="gender" placeholder="Select Gender"></p-dropdown>
+            </div>
+            <div class="field col-12">
+              <label for="paymentScreenshot">Upload Payment Screenshot</label>
+              <input type="file" class="p-inputtext-sm file-input input-width" (change)="onFileSelect($event)" accept="image/*" />
+            </div>
+            <div class="col-12 mt-4">
+              <button pButton type="submit" label="Register and Secure Your Spot" icon="pi pi-check" class="p-button-lg p-button-success p-button-raised w-100" [disabled]="registrationForm.invalid"></button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <footer class="footer-cta">
+    <h3>Have Questions or Need More Details?</h3>
+    <p>Dive into the full curriculum, project details, and FAQs before you enroll.</p>
+    <a href="http://growingflowers-angular-app.s3-website.eu-north-1.amazonaws.com/trainings" target="_blank" pButton label="View Complete Program Details" icon="pi pi-arrow-right" class="p-button-primary p-button-raised"></a>
+  </footer>
+</div>

@@ -7,8 +7,9 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
-import { EmailService } from '../../Services/email.service';
+
 import { MessageService } from 'primeng/api';
+import { EmailService } from '../../Services/Email/email.service';
 
 @Component({
   selector: 'app-career',

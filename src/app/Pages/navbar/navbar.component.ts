@@ -46,6 +46,7 @@ export class NavbarComponent {
     { label: 'Services', route: '/services' },
     { label: 'Careers', section: 'careers', route: '/careers' },
     { label: 'Contact Us', section: 'contact-us', route: '/contact-us' },
+    { label: 'Trainings', route: '/trainings' },
   ];
 
   // Check if the item is active (current route)

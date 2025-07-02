@@ -8,6 +8,7 @@ import { ServicesComponent } from './Pages/services/services.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 import { LifeAtGFSSComponent } from './Pages/company/life-at-gfss/life-at-gfss.component';
 import { VideosComponent } from './Pages/company/videos/videos.component';
+import { TrainingsComponent } from './Pages/trainings/trainings.component';
 
 export const routes: Routes = [
     {
@@ -67,5 +68,9 @@ export const routes: Routes = [
         path: 'contact-us',
         component: ContactUsComponent
     },
+    {
+        path: 'trainings',
+        component: TrainingsComponent
+    }
 
 ];
