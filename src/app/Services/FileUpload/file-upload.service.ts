@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FileUploadService {
-apiUrl: any = 'https://43.204.206.181:8084/api';
+apiUrl: any = 'http://43.204.206.181:8084/api';
 
   headers = new HttpHeaders({
     'Content-Type': 'multipart/form-data'
